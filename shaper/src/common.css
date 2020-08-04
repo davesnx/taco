@@ -1,0 +1,75 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  --settingsBg: #1B1B1B;
+
+  margin: 0;
+  background-color: var(--settingsBg);
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.textInput {
+  padding: calc(var(--textFrameY) - var(--fieldBorderWidth)) var(--textFrameY);
+  font: inherit;
+  color: inherit;
+  border: var(--fieldBorderWidth) solid var(--c-fieldBorder);
+  appearance: none;
+  border-radius: var(--radius);
+  width: 100%;
+  background-color: transparent;
+}
+
+.button {
+  padding: var(--textFrameY) var(--textFrameX);
+  font: inherit;
+  border: none;
+  background-color: var(--c-buttonBg);
+  appearance: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--c-body);
+  letter-spacing: 0.03em;
+  transition: 0.2s filter;
+}
+
+.button:hover {
+  filter: brightness(1.1);
+}
+
+.button:active {
+  filter: brightness(0.9);
+}
+
+.buttonSmall {
+  font-size: var(--text-xs);
+}
+
+.roundButtons .button {
+  border-radius: 1000rem;
+}
+
+.button-accent {
+  background-color: var(--c-accent);
+  color: var(--c-accentContrasted);
+}
+
+.button-accent span {
+  color: black;
+  mix-blend-mode: exclusion;
+}
+
+.card {
+  padding: var(--space-l);
+  background-color: white;
+  border-radius: var(--radius);
+}
+
+.detailsActions {
+  display: flex;
+}

@@ -1,0 +1,226 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.settingsWrapper {
+  color: white;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: auto;
+}
+
+.settingsGrid {
+  min-width: 1280px;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto;
+}
+
+.settingsGridColumnDouble {
+  grid-column: 2 / span 2;
+}
+
+.settingTextInput {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: 0.25rem;
+  left: -0.25rem;
+  position: relative;
+  font: inherit;
+  width: 100%;
+  transition: 0.1s 0.2s;
+}
+
+.settingTextInput:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.settingTextInputSmall {
+  max-width: 4rem;
+}
+
+.settingsGridColumnTitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.mainLogoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mainLogo {
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.mainLogo span {
+  margin-bottom: 0.7rem;
+}
+
+.ghIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.5;
+}
+
+.ghIcon svg {
+  display: block;
+  width: 100%;
+}
+
+.aboutSection {
+  font-size: 0.8rem;
+}
+
+.aboutSection a, .aboutSection a:visited {
+  color: inherit;
+  text-underline-position: under;
+  opacity: 0.5;
+  text-decoration-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.triggersColumn {
+  border-left: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-right: 1px solid hsla(0, 0%, 100%, 0.1);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 0 3.5rem;
+}
+
+.randomButtonSection {
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.triggerButton {
+  background-color: white;
+  border: none;
+  font: inherit;
+  color: var(--settingsBg);
+  padding: 0.8em 1em;
+  cursor: pointer;
+}
+
+.xBorder {
+  height: 1px;
+  width: 100%;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.settingLabel {
+  display: block;
+}
+
+.settingLabel, .settingNumberUnit {
+  opacity: 0.5;
+}
+
+.settingWrapper {
+  margin: 1.2rem 0 0 0;
+}
+
+.settingNumberInputWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settingIllustration {
+  display: block;
+}
+
+input[type=range] {
+  display: block;
+}
+
+.settingIllustrationSection {
+  height: 35px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.switchSettingWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.switchSettingWrapper .settingLabel {
+  margin-bottom: 0;
+  padding-left: 0.5rem;
+}
+
+.switchTrack {
+  width: 2rem;
+  height: 1rem;
+  display: block;
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.5);;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.switchTrack input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.switchKnob {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  display: block;
+  box-shadow: inset 0 0 0 1px white, -1rem 0 0 10px white;
+  transition: 0.2s;
+  background-color: var(--settingsBg);
+  position: relative;
+}
+
+.switchTrack input:checked + .switchKnob {
+  transform: translate(1rem);
+}
+
+.settingButtonGroup {
+  display: flex;
+  font-size: 0.8rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  padding: 0.25rem;
+}
+
+.settingButton {
+  appearance: none;
+  border-radius: 0;
+  border: none;
+  font: inherit;
+  font-size: 0.8rem;
+  color: hsla(0, 0%, 100%, 0.5);
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.settingButton.active {
+  color: var(--settingsBg);
+  background-color: white;
+}
