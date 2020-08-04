@@ -1,0 +1,7 @@
+(Source bs-react)
+(Cfg_str project_name taco)
+(Cfg_str project_slug taco)
+(Cfg_str project_description"A short, but powerful statement about your project")
+(Cfg_str author_name davesnx)
+(Cfg_str css_framework None)
+(Cfg_str ci_cd Github)

@@ -1,0 +1,63 @@
+{
+  "name": "taco",
+  "version": "0.1.0",
+  "description": "A short, but powerful statement about your project",
+  "author": "davesnx",
+  "license": "MIT",
+  "homepage": "https://github.com//taco",
+  "bugs": {
+    "url": "https://github.com//taco/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//taco.git"
+  },
+  "keywords": [
+    "BuckleScript",
+    "Reason",
+    "ReasonReact"
+  ],
+  "dependencies": {
+    "@ahrefs/bs-emotion": "^1.0.1",
+    "@davesnx/styled-ppx": "^0.15.0",
+    "autoprefixer": "^9.7.3",
+    "re-classnames": "^4.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "reason-react": ">=0.7.0"
+  },
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.9",
+    "bs-css": "^11.0.0",
+    "bs-platform": "^7.0.1",
+    "bs-react-testing-library": "^0.6.0",
+    "bs-webapi": "^0.15.6",
+    "concurrently": "^5.0.2",
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "style-loader": "^1.1.2",
+    "terser-webpack-plugin": "^2.3.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/tests"
+    ],
+    "testMatch": [
+      "<rootDir>/tests/**/*_test.{js,bs.js}"
+    ]
+  },
+  "scripts": {
+    "build": "bsb -make-world && NODE_ENV=production webpack --config config/webpack.config.js && cp -n public/* build/ | true",
+    "start": "concurrently -c --kill-others 'yarn start:bsb' 'yarn start:webpack'",
+    "start:bsb": "bsb -make-world -w",
+    "start:webpack": "webpack-dev-server --config config/webpack.config.js --open",
+    "clean": "bsb -clean-world",
+    "test": "bsb -make-world && jest",
+    "format": "bsrefmt --in-place */**/*.re */*.re"
+  }
+}

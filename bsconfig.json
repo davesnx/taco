@@ -1,0 +1,47 @@
+{
+  "name": "taco",
+  "reason": {
+    "react-jsx": 3
+  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "tests",
+      "subdirs": true,
+      "type": "dev"
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "namespace": true,
+  "bs-dependencies": [
+    "reason-react",
+    "@ahrefs/bs-emotion",
+    "re-classnames"
+  ],
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest",
+    "bs-react-testing-library",
+    "bs-webapi"
+  ],
+  "ppx-flags": [
+    "@davesnx/styled-ppx/styled-ppx"
+  ],
+  "refmt": 3,
+  "warnings": {
+    "error": "+5"
+  },
+  "bsc-flags": [
+    "-bs-super-errors",
+    "-bs-no-version-header",
+    "-open Belt"
+  ]
+}
