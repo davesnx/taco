@@ -29,7 +29,9 @@ module Theme = {
   let unit = 4;
   let unitize = v => v * unit;
 
-  module Colors =
+  module Colors = {
+    let main = "#333"
+  }
 }
 
 module Container = {
@@ -79,47 +81,7 @@ module Container = {
     [@genType]
     type t = [ | `Zero | `One(Color.t) | `Two(Color.t)];
     type radius = [ | `None | `Default | `Full];
-
-    /* let toCSS = (position, border) => {
-      switch (border) {
-      | `Zero => position(`px(0), `solid, `Transparent->WL.Color.toEmotion)
-      | `One(color) => position(`px(1), `solid, color->WL.Color.toEmotion)
-      | `Two(color) => position(`px(2), `solid, color->WL.Color.toEmotion)
-      };
-    };
-
-    [@genType "fromJs"]
-    let fromJs = (string, color) => {
-      switch (string) {
-      | "Zero" => Some(`Zero(color))
-      | "One" => Some(`One(color))
-      | "Two" => Some(`Two(color))
-      | _ => None
-      };
-    }; */
   };
-
-/*   let styles =
-      (
-        ~background: WL.Color.t,
-        ~backgroundHover: option(WL.Color.t),
-        ~shadow=?,
-        ~content,
-      ) => {
-    let backgroundHover =
-      switch (backgroundHover, background) {
-      | (Some(color), _) => backgroundColor(color->WL.Color.toEmotion)
-      | (None, bgColor) => backgroundColor(bgColor->WL.Color.toEmotion)
-      };
-
-    css([
-      background->WL.Color.toEmotion->backgroundColor,
-      content->WL.Color.toEmotion->color,
-      hover([backgroundHover]),
-      shadow->Shadow.toCSS,
-    ]);
-  };
- */
 
   [@react.component]
   let make =
@@ -156,15 +118,6 @@ module Container = {
         | `Default => [%css "border-radius: 4px"]
         | `Full => [%css "border-radius: 999999px"]
         },
-        /* borderStyles(
-          ~border?,
-          ~borderTop?,
-          ~borderRight?,
-          ~borderBottom?,
-          ~borderLeft?,
-          (),
-        ),
-        styles(~background, ~backgroundHover, ~content=color, ~shadow?), */
       ]);
 
     <div className ?onClick ?onMouseOver ?onMouseLeave> children </div>
@@ -263,17 +216,4 @@ module Spacer = {
   };
 };
 
-[@react.component]
-let make = (~name) => {
-  <Container>
-    <Spacer all=10>
-      <Text>
-        {React.string({j|👋 Welcome $name! You can edit me in |j})}
-        <code> {React.string("src/components/Greet.re")} </code>
-      </Text>
-      <Link href="https://reasonml.github.io/reason-react/">
-        {React.string("Learn Reason React")}
-      </Link>
-    </Spacer>
-  </Container>;
-};
+/* https://gist.github.com/davesnx/b9f8f4349663b685f45e4af13897c1fc */
