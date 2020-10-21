@@ -1,11 +1,11 @@
 let useRouter = () => ReasonReactRouter.useUrl()->Route.fromUrl;
 
-let push = route => route->Route.toString->ReasonReactRouter.push;
+let push = route => ReasonReactRouter.push(route->Route.toString);
 
 module Link = {
   [@react.component]
   let make = (~route: Route.t', ~children) => {
-    let location = route->Route.toString;
+    let location = Route.toString(route);
 
     <a
       href=location
@@ -16,8 +16,8 @@ module Link = {
             && !event->ReactEvent.Mouse.ctrlKey
             && !event->ReactEvent.Mouse.metaKey
             && !event->ReactEvent.Mouse.shiftKey) {
-          event->ReactEvent.Mouse.preventDefault;
-          location->ReasonReactRouter.push;
+          ReactEvent.Mouse.preventDefault(event);
+          ReasonReactRouter.push(location);
         }
       }>
       children

@@ -143,10 +143,8 @@ module Distribute = {
         ~distribute=SpaceAround,
         ~direction=Horizontal,
         ~fullHeight=true,
-        ~fit as _, /* currnetly not implemented */
         ~children,
       ) => {
-    let _gapValue = Theme.unitize(gap);
     let className =
       Cn.make([
         [%css "display: flex;"],
@@ -168,21 +166,6 @@ module Distribute = {
         | Center => [%css "justify-content: center"]
         | End => [%css "justify-content: flex-end"]
         },
-        /*
-        [%css {|
-          & > *:not(:last-child) {
-            margin-bottom: $gapValue;
-          }
-        |}],
-        fit ? [%css {|
-          & > * {
-            flex: 1, 1, 0;
-          }
-        |}]: [%css {|
-          & > * {
-            flex: 0, 0, auto;
-          }
-        |}] */
       ]);
 
     <div className> children </div>;
