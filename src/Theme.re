@@ -1,3 +1,7 @@
+/* Including Provider here would make users of Theme, only need to
+open Theme at the top of the file, and no need to open Provider. */
+include Provider;
+
 type px = int;
 type rem = float;
 type ratio = float;
@@ -18,7 +22,7 @@ module Typography = {
     font: list(string)
   };
 
-  let view = (size: size, k: kind): rem => {
+  let view = (size, k) => {
     switch (k) {
       |`S => size.s
       |`M => size.m
@@ -28,15 +32,15 @@ module Typography = {
     }
   };
 
-  let make = (~increment: ratio, ~baseSize: rem, ~font: string): config => {
+  let make = (~increment: ratio, ~baseSize: rem, ~font: string) => {
     {
       font: [font, "sans"],
       size: {
-        s: baseSize /. incremenet,
+        s: baseSize /. increment,
         m: baseSize,
-        l: baseSize *. incremenet,
-        xl: baseSize *. incremenet *. incremenet,
-        xxl: l *. incremenet *. incremenet *. incremenet),
+        l: baseSize *. increment,
+        xl: baseSize *. increment *. increment,
+        xxl: baseSize *. increment *. increment *. increment,
       }
     }
   };
@@ -53,23 +57,23 @@ module Spacing = {
     xxl: rem
   };
 
-  let view = (size: size, k: kind): rem => {
+  let view = (size, k): rem => {
     switch (k) {
-      |`S => size.s
-      |`M => size.m
-      |`L => size.l
-      |`XL => size.xl
-      |`XXL => size.xxl
+      | `S => size.s
+      | `M => size.m
+      | `L => size.l
+      | `XL => size.xl
+      | `XXL => size.xxl
     }
   };
 
-  let make = (~increment: ratio, ~baseUnit: rem, ~font: string): config => {
+  let make = (~increment: ratio, ~baseUnit: rem): config => {
     {
-        s: baseUnit /. incremenet,
-        m: baseUnit,
-        l: baseUnit *. incremenet,
-        xl: baseUnit *. incremenet *. incremenet,
-        xxl: l *. incremenet *. incremenet *. incremenet),
+      s: baseUnit /. increment,
+      m: baseUnit,
+      l: baseUnit *. increment,
+      xl: baseUnit *. increment *. increment,
+      xxl: baseUnit *. increment *. increment *. increment,
     }
   };
 };
@@ -85,7 +89,7 @@ module Border = {
       large: rem,
     };
 
-    let view = (size: size, k: kind): rem => {
+    let view = (size: config, k: kind): rem => {
       switch (k) {
         | `Zero => size.zero
         | `S => size.small
@@ -96,9 +100,9 @@ module Border = {
 
     let make = (baseUnit: ratio): config => {
       {
-        zero: 0,
+        zero: 0.,
         small: baseUnit,
-        medium: baseUnit *. 2,
+        medium: baseUnit *. 2.,
         large: baseUnit *. baseUnit
       }
     };
@@ -115,7 +119,7 @@ module Border = {
       full: rem,
     };
 
-    let view = (size: size, k: kind): rem => {
+    let view = (size, k): rem => {
       switch (k) {
         | `Zero => size.zero
         | `S => size.small
@@ -127,50 +131,28 @@ module Border = {
 
     let make = (baseUnit: rem): config => {
       {
-        zero: 0,
+        zero: 0.,
         small: baseUnit,
-        medium: baseUnit *. 2,
+        medium: baseUnit *. 2.,
         large: baseUnit *. baseUnit,
-        full: full,
+        full: 999.,
       }
     };
   };
 
-  let viewRadii = Radius.view;
-  let viewSize = Size.view;
-
-  let make = (~baseSize: rem, ~baseRadii: rem) => {
-    {
-      radii: Radius.make(~baseRadii),
-      size: Size.make(~baseSize),
-    }
+  type config = {
+    radii: Radius.config,
+    size: Size.config,
   }
 };
 
-type colors = {
-  /*
-    TODO: Create a way to handle colors:
+type colors; /* TODO */
+type elevations; /* TODO */
+type responsive; /* TODO */
 
-    As a user I want to handle different scales of colors on a base of given colors.
-
-    Generate x states of each color with a specific scale.
-    blue -> #730080 #68009F #5000BF #2D00DF #0000FF #222EFF #445AFF #6681FF #88A6FF #AAC5FF #CCE0FF
-    green -> #008073 #009F68 #00BF50 #00DF2D #00FF00 #2EFF22 #5AFF44 #81FF66 #A6FF88 #C5FFAA #E0FFCC
-    red -> #FF0000 #FF222E #FF445A #FF6681 #FF88A6 #FFAAC5 #FFCCE0
-
-    Based on:
-    https://hihayk.github.io/scale/#4/6/50/80/-51/25/20/14/2D525F/45/82/95
-   */
-  hex: string
-}
-
-type screens;
-
-type t = {
-  typography: Typography.t,
-  spacing: spacing,
-  border: border,
-  colors: colors,
-  screens: screens,
+type theme = {
+  typography: Typography.config,
+  spacing: Spacing.config,
+  border: Border.config,
   isDarkMode: bool
 }
