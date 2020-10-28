@@ -16,7 +16,7 @@
   ],
   "package-specs": [
     {
-      "module": "commonjs",
+      "module": "es6",
       "in-source": true
     }
   ],
@@ -25,7 +25,8 @@
   "bs-dependencies": [
     "reason-react",
     "@ahrefs/bs-emotion",
-    "re-classnames"
+    "re-classnames",
+    "bs-storybook"
   ],
   "bs-dev-dependencies": [
     "@glennsl/bs-jest",
