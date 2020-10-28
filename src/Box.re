@@ -7,14 +7,13 @@ let make =
       ~background=`Mono700,
       ~backgroundHover=?,
       ~borderRadius=`None,
-      ~color=`Mono200,
       ~shadow=?,
       ~border=?,
       ~borderTop=?,
       ~borderBottom=?,
       ~borderLeft=?,
       ~borderRight=?,
-      /* Container can have any ReactEvent */
+      /* Container can have any ReactEvent, TODO: add all events here... */
       ~onClick=?,
       ~onMouseOver=?,
       ~onMouseLeave=?,
@@ -27,17 +26,8 @@ let make =
       Belt.Option.isSome(onClick) ? [%css "cursor: pointer;"] : "",
       [%css "width: $width"],
       [%css "height: $height"],
-      switch (borderRadius) {
-      | `None =>
-        %css
-        "border-radius: 0"
-      | `Default =>
-        %css
-        "border-radius: 4px"
-      | `Full =>
-        %css
-        "border-radius: 999999px"
-      },
+      [%css "background-color: rgba(0, 0, 0, 0.2)"],
+      [%css "border: 1px solid rgba(0, 0, 0, 0.4)"],
     ]);
 
   <div className ?onClick ?onMouseOver ?onMouseLeave> children </div>;

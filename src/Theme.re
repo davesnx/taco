@@ -188,13 +188,13 @@ module Provider = {
 let defaultTheme =
   make({
     "typography": {
-      "increment": 1.1,
+      "increment": 1.125,
       "size": 15.,
       "font": "Inter",
     },
     "space": {
-      "increment": 1.1,
-      "unit": 2.,
+      "increment": 4.,
+      "unit": 8.,
     },
     "border": {
       "radii": 4.,
