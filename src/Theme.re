@@ -175,33 +175,36 @@ let make = value => {
   };
 };
 
-module Provider = {
-  /* TODO:
-       Create a ThemeProvider
-         - [https://github.com/Hehk/reason-react-context](https://github.com/Hehk/reason-react-context)
-         - [https://dev.to/margaretkrutikova/reason-react-context-explained-in-action-5eki](https://dev.to/margaretkrutikova/reason-react-context-explained-in-action-5eki)
-     */
-  [@react.component]
-  let make = () => ();
+let defaultTheme = {
+  "typography": {
+    "increment": 1.125,
+    "size": 15.,
+    "font": "Inter",
+  },
+  "space": {
+    "increment": 4.,
+    "unit": 8.,
+  },
+  "border": {
+    "radii": 4.,
+    "size": 2.,
+  },
 };
-
-let defaultTheme =
-  make({
-    "typography": {
-      "increment": 1.125,
-      "size": 15.,
-      "font": "Inter",
-    },
-    "space": {
-      "increment": 4.,
-      "unit": 8.,
-    },
-    "border": {
-      "radii": 4.,
-      "size": 2.,
-    },
-  });
-
-let context = React.createContext(defaultTheme);
+let context = React.createContext(make(defaultTheme));
 
 let useTheme = () => React.useContext(context);
+
+module Provider = {
+  module InnerProvider = {
+    let makeProps = (~value, ~children, ()) => {
+      "value": value,
+      "children": children,
+    };
+    let make = React.Context.provider(context);
+  };
+
+  [@react.component]
+  let make = (~value, ~children) => {
+    <InnerProvider value={make(value)}> children </InnerProvider>;
+  };
+};

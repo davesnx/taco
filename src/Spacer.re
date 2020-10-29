@@ -11,6 +11,7 @@ let make =
       ~all=`Zero,
     ) => {
   let theme = useTheme();
+
   let unitize = Spacing.view(theme.spacing);
 
   let className =
