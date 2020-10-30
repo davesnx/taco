@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "outDir": "dist/cjs",
+    "types": [
+      "@types/node",
+      "@types/jest"
+    ],
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+    "declaration": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "strict": false,
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "sourceMap": true,
+    "pretty": true
+  }
+}

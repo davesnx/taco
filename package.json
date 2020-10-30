@@ -4,13 +4,13 @@
   "description": "",
   "author": "davesnx",
   "license": "MIT",
-  "homepage": "https://github.com//taco",
+  "homepage": "https://github.com/davesnx/taco",
   "bugs": {
-    "url": "https://github.com//taco/issues"
+    "url": "https://github.com/davesnx/taco/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//taco.git"
+    "url": "https://github.com/davesnx/taco.git"
   },
   "keywords": [
     "BuckleScript",
