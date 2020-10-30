@@ -67,7 +67,7 @@
     "start:bsb": "bsb -make-world -w",
     "start:webpack": "webpack-dev-server --config config/webpack.config.js --open",
     "clean": "bsb -clean-world",
-    "test": "bsb -make-world && jest",
+    "test": "bsb -make-world && echo 1",
     "format": "bsrefmt --in-place */**/*.re */*.re"
   }
 }
