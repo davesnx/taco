@@ -24,21 +24,9 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-    
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-
-      - name: Check formatting
-        run: |
-          yarn format
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "There are differences:"
-            git status --porcelain
-            echo "----"
-            echo ""
-            echo 'Please run `yarn format` locally to fix the issues.'
-            exit 1
-          fi
 
       - name: Run tests
         run: yarn test
@@ -64,7 +52,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-    
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
