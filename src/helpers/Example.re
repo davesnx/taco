@@ -6,13 +6,8 @@ module HR = [%styled.div
   "
 ];
 
-module Heading = [%styled.h2 "
-  color: rgb(0, 0, 0);
-"];
-
 module Root = [%styled.div
   "
-  margin-top: 32px;
   padding: 32px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   "
@@ -31,8 +26,7 @@ let make = (~title, ~children) => {
       margin: 0 auto;
       "
     ]>
-    <Heading> {React.string(title)} </Heading>
-    <HR />
+    <Spacer bottom=`M> <Text weight=`Semibold> title </Text> </Spacer>
     <Root> children </Root>
   </div>;
 };
