@@ -7,11 +7,6 @@
     {
       "dir": "src",
       "subdirs": true
-    },
-    {
-      "dir": "tests",
-      "subdirs": true,
-      "type": "dev"
     }
   ],
   "package-specs": [
