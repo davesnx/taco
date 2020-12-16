@@ -1,4 +1,4 @@
-type size = [ | `Xsmall | `Small | `Medium | `Large | `XXLarge];
+type size = [ | `XSmall | `Small | `Medium | `Large | `XLarge | `XXLarge];
 
 type weight = [
   | `Thin
@@ -21,7 +21,7 @@ type align = [ | `Left | `Right | `Center | `Justify];
 let make =
     (
       ~color="rgba(0, 0, 0, 1)",
-      /* ~size=`Medium, */
+      ~size: size=`Medium,
       ~weight: weight=`Regular,
       ~leading=`Normal,
       ~align=`Left,
@@ -95,10 +95,32 @@ let make =
 
   let display = inline ? [%css "display: inline"] : [%css "display: block"];
 
+  let size =
+    switch (size) {
+    | `XSmall =>
+      %css
+      "font-size: 14px"
+    | `Small =>
+      %css
+      "font-size: 16px"
+    | `Medium =>
+      %css
+      "font-size: 22px"
+    | `Large =>
+      %css
+      "font-size: 36px"
+    | `XLarge =>
+      %css
+      "font-size: 48px"
+    | `XXLarge =>
+      %css
+      "font-size: 72px"
+    };
+
   let className =
     Cn.make([
       /* [%css {| font-family: "Wonder Unit Sans", "sans-serif" |}], */
-      /* size, */
+      size,
       color,
       weight,
       align,

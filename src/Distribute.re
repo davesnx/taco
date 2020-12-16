@@ -15,10 +15,31 @@ type distribute =
   | Center
   | End;
 
+/* select("& > *:not(:last-child)", [marginBottom(WL.unit(gap))]), */
+let gapClass = (~unit, ~fit) => {
+  let gap = Css.toPx(unit * 4);
+  switch (fit) {
+  | true => [%css {|
+      & > * {
+        flex: 1 1 0%;
+      };
+
+      & > *:last-child {
+        margin-bottom: $gap;
+      }
+    |}]
+  | false => [%css {|
+      & > * {
+        flex: 0 0 auto;
+      }
+  |}];
+  };
+};
+
 [@react.component]
 let make =
     (
-      ~gap as _,
+      ~gap,
       ~align: align=Start,
       ~distribute=SpaceAround,
       ~direction=Horizontal,
@@ -68,6 +89,7 @@ let make =
         %css
         "justify-content: flex-end"
       },
+      gapClass(~unit=gap, ~fit=false),
     ]);
 
   <div className> children </div>;

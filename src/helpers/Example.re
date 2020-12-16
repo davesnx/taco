@@ -6,27 +6,28 @@ module HR = [%styled.div
   "
 ];
 
-module Root = [%styled.div
+module Body = [%styled.div
   "
   padding: 32px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   "
 ];
 
+module Main = [%styled.div
+  {|
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+|}
+];
+
 [@react.component]
 let make = (~title, ~children) => {
-  <div
-    className=[%css
-      "
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: 800px;
-      width: 100%;
-      margin: 0 auto;
-      "
-    ]>
+  <Main>
     <Spacer bottom=`M> <Text weight=`Semibold> title </Text> </Spacer>
-    <Root> children </Root>
-  </div>;
+    <Body> children </Body>
+  </Main>;
 };

@@ -11,7 +11,10 @@
       "@types/node",
       "@types/jest"
     ],
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "jsx": "react",
     "declaration": false,
     "module": "commonjs",
