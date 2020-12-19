@@ -1,47 +1,41 @@
-open Theme;
+let spaceDirectionStyles = (prop, direction, unit) => {
+  if (unit != 0) {
+    Emotion.css([
+      Emotion.unsafe(prop ++ "-" ++ direction, Theme.unitize(unit))
+    ])
+  } else {
+    Emotion.css([]);
+  }
+};
+
+let spaceStyles = (prop, unit) => {
+  if (unit != 0) {
+    Emotion.css([
+      Emotion.unsafe(prop, Theme.unitize(unit))
+    ])
+  } else {
+    Emotion.css([]);
+  }
+};
 
 [@react.component]
 let make =
     (
       ~children=?,
-      ~top=`Zero,
-      ~left=`Zero,
-      ~right=`Zero,
-      ~bottom=`Zero,
-      ~all=`Zero,
+      ~top=0,
+      ~left=0,
+      ~right=0,
+      ~bottom=0,
+      ~all=0,
+      ~inner=false,
     ) => {
-  let theme = useTheme();
-
-  let unitize = Spacing.view(theme.spacing);
-
   let className =
     Cn.make([
-      switch (
-        unitize(top),
-        unitize(left),
-        unitize(right),
-        unitize(bottom),
-        unitize(all),
-      ) {
-      | (value, _, _, _, _) when value != 0. =>
-        %css
-        {j| margin-top: $value; |j}
-      | (_, value, _, _, _) when value != 0. =>
-        %css
-        {j| margin-left: $value; |j}
-      | (_, _, value, _, _) when value != 0. =>
-        %css
-        {j| margin-right: $value; |j}
-      | (_, _, _, value, _) when value != 0. =>
-        %css
-        {j| margin-bottom: $value; |j}
-      | (_, _, _, _, value) when value != 0. =>
-        %css
-        {j| margin: $value; |j}
-      | _ =>
-        %css
-        ""
-      },
+      spaceDirectionStyles(inner ? "margin" : "padding", "top", top),
+      spaceDirectionStyles(inner ? "margin" : "padding", "bottom", bottom),
+      spaceDirectionStyles(inner ? "margin" : "padding", "left", left),
+      spaceDirectionStyles(inner ? "margin" : "padding", "right", right),
+      spaceStyles(inner ? "margin" : "padding", all),
     ]);
 
   <div className>

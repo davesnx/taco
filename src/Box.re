@@ -1,18 +1,48 @@
+module Border = {
+  type radius = [ `Zero | `Rounded | `Full ];
+  type t = [`Zero | `One | `Twoo ];
+
+  open Emotion;
+
+  let styles = (border) => {
+    switch (border) {
+      | Some(b) => switch (b) {
+        | `Zero => css([unsafe("border", "none")])
+        | `One(color) => css([unsafe("border", "1px solid " ++ color)])
+        | `Twoo(color) => css([unsafe("border", "2px solid " ++ color)])
+        }
+      | None => ""
+    }
+  };
+
+  let stylesWithDirection = (direction, border) => {
+    switch (border) {
+      | Some(b) => switch (b) {
+        | `Zero => css([unsafe("border-" ++ direction, "none")])
+        | `One(color) => css([unsafe("border-" ++ direction, "1px solid " ++ color)])
+        | `Twoo(color) => css([unsafe("border-" ++ direction, "2px solid " ++ color)])
+        }
+      | None => ""
+    }
+  };
+};
+
 [@react.component]
 let make =
     (
       ~inline=false,
+      ~padding=0,
       ~height="auto",
       ~width="auto",
-      /* ~background=`Mono700,
-         ~backgroundHover=?,
-         ~borderRadius=`None,
-         ~shadow=?,
-         ~border=?,
-         ~borderTop=?,
-         ~borderBottom=?,
-         ~borderLeft=?,
-         ~borderRight=?, */
+      ~background=Colors.white,
+      ~backgroundHover=?,
+      ~borderRadius=`Rounded,
+      ~border=?,
+      ~borderTop=?,
+      ~borderBottom=?,
+      ~borderLeft=?,
+      ~borderRight=?,
+      /* ~shadow=?, */
       /* Container can have any ReactEvent, TODO: add all events here... */
       ~onClick=?,
       ~onMouseOver=?,
@@ -26,8 +56,22 @@ let make =
       Belt.Option.isSome(onClick) ? [%css "cursor: pointer;"] : "",
       [%css "width: $width"],
       [%css "height: $height"],
-      [%css "background-color: rgba(0, 0, 0, 0.2)"],
-      [%css "border: 1px solid rgba(0, 0, 0, 0.4)"],
+      [%css "background: $background"],
+      switch (backgroundHover) {
+        | Some(background) => [%css "&:hover { background: $background; }"]
+        | None => ""
+      },
+      switch (borderRadius) {
+        | `Zero => ""
+        | `Rounded => [%css "border-radius: 2px"]
+        | `Full => [%css "border-radius: 999px"]
+      },
+      Border.styles(border),
+      Border.stylesWithDirection("top", borderTop),
+      Border.stylesWithDirection("bottom", borderBottom),
+      Border.stylesWithDirection("left", borderLeft),
+      Border.stylesWithDirection("right", borderRight),
+      Spacer.spaceStyles("padding", padding)
     ]);
 
   <div className ?onClick ?onMouseOver ?onMouseLeave> children </div>;

@@ -4,22 +4,16 @@ module Text = {
   [@react.component]
   let make = () => {
     <Example title="Text">
-      <Spacer top=`M />
-      <Text weight=`Black> "Black" </Text>
-      <Spacer top=`M />
-      <Text weight=`Extrabold> "Extrabold" </Text>
-      <Spacer top=`M />
-      <Text weight=`Bold> "Bold" </Text>
-      <Spacer top=`M />
-      <Text weight=`Semibold> "Semibold" </Text>
-      <Spacer top=`M />
-      <Text weight=`Medium> "Medium" </Text>
-      <Spacer top=`M />
-      <Text weight=`Regular> "Regular" </Text>
-      <Spacer top=`M />
-      <Text weight=`Light> "Light" </Text>
-      <Spacer top=`M />
-      <Text weight=`Thin> "Thin" </Text>
+      <Stack gap=4>
+        <Text weight=`Black> "Black" </Text>
+        <Text weight=`Extrabold> "Extrabold" </Text>
+        <Text weight=`Bold> "Bold" </Text>
+        <Text weight=`Semibold> "Semibold" </Text>
+        <Text weight=`Medium> "Medium" </Text>
+        <Text weight=`Regular> "Regular" </Text>
+        <Text weight=`Light> "Light" </Text>
+        <Text weight=`Thin> "Thin" </Text>
+      </Stack>
     </Example>;
   };
 };

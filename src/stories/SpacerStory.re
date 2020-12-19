@@ -4,8 +4,8 @@ module Spacers = {
   [@react.component]
   let make = () => {
     <Example title="Spacer">
-      <Spacer bottom=`M> <Box width="120" height="40" /> </Spacer>
-      <Box width="120" height="120" />
+      <Spacer bottom=4> <Box background={Colors.pink} width="120" height="40" /> </Spacer>
+      <Box background={Colors.pink} width="120" height="120" />
     </Example>;
   };
 };

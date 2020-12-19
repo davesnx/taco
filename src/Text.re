@@ -20,7 +20,7 @@ type align = [ | `Left | `Right | `Center | `Justify];
 [@react.component]
 let make =
     (
-      ~color="rgba(0, 0, 0, 1)",
+      ~color=Colors.Black.alpha9,
       ~size: size=`Medium,
       ~weight: weight=`Regular,
       ~leading=`Normal,
