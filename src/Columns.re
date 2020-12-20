@@ -1,7 +1,18 @@
+let gap = React.createContext(0);
+
+module ColumnsGapProvider = {
+  let makeProps = (~value: int, ~children, ()) => {
+    "value": value,
+    "children": children,
+  };
+  let make = React.Context.provider(gap);
+};
+
 [@react.component]
 let make =
     (~children, ~fullHeight=true, ~gap=0) => {
-  let margin = Utils.toPx(gap * 4);
+  let value = gap * 4;
+  let margin = Utils.toPx(value);
   let className =
     Cn.make([
       [%css "display: flex; flex-direction: row; width: 100%;"],
@@ -17,5 +28,7 @@ let make =
       |}]
     ]);
 
-  <div className> children </div>;
+  <ColumnsGapProvider value>
+    <div className> children </div>
+  </ColumnsGapProvider>;
 };

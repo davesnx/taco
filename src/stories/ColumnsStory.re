@@ -47,8 +47,8 @@ module Columnes = {
         </Column>
       </Columns>
       <Columns gap=4>
-        <Column width=`Pct(1. /. 3.)>
-          <Box width="100%" height="50px" border={`One(Colors.Black.alpha2)} background={Colors.pink}><Align x=`Center y=`Center><Text size=`XSmall weight=`Bold>"1/3"</Text></Align></Box>
+        <Column width=`Pct(2. /. 5.)>
+          <Box width="100%" height="50px" border={`One(Colors.Black.alpha2)} background={Colors.pink}><Align x=`Center y=`Center><Text size=`XSmall weight=`Bold>"2/5"</Text></Align></Box>
         </Column>
         <Column width=`Auto>
           <Box padding=4 width="100%" height="50px" border={`One(Colors.Black.alpha2)} background={Colors.pink}><Align x=`Center y=`Center><Text size=`XSmall weight=`Bold>"Auto - based on the content"</Text></Align></Box>
