@@ -27,9 +27,9 @@ module Main = [%styled.div
 [@react.component]
 let make = (~title, ~description=?, ~children) => {
   <Main>
-    <Spacer bottom=3> <Text weight=`Semibold> title </Text> </Spacer>
+    <Spacer bottom=3> <Text size=`Large weight=`Semibold> title </Text> </Spacer>
     {switch (description) {
-      | Some(desc) => <Spacer bottom=6 top=2> <Text weight=`Medium size=`Small> desc </Text> </Spacer>
+      | Some(desc) => <Spacer bottom=6 top=2> <Text size=`Medium weight=`Medium > desc </Text> </Spacer>
       | None => React.null
     }}
     <Body> children </Body>
