@@ -4,7 +4,12 @@ module Boxes = {
   [@react.component]
   let make = () => {
     <Example title="Box">
-      <Box width="240" height="80" border={`One(Colors.Black.alpha2)} background={Colors.pink} />
+      <Box
+        width="240"
+        height="80"
+        border={`One(Colors.Black.alpha2)}
+        background=Colors.pink
+      />
     </Example>;
   };
 };

@@ -6,13 +6,6 @@ module HR = [%styled.div
   "
 ];
 
-module Body = [%styled.div
-  "
-  padding: 32px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  "
-];
-
 module Main = [%styled.div
   {|
   display: flex;
@@ -32,6 +25,6 @@ let make = (~title, ~description=?, ~children) => {
       | Some(desc) => <Spacer bottom=6 top=2> <Text size=`Medium weight=`Medium > desc </Text> </Spacer>
       | None => React.null
     }}
-    <Body> children </Body>
+    <Box padding=4 border={`One(Colors.Black.alpha4)} borderRadius=`Rounded> children </Box>
   </Main>;
 };
