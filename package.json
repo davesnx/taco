@@ -60,8 +60,8 @@
     ]
   },
   "scripts": {
-    "build": "bsb -make-world && NODE_ENV=production yarn build:storybook && cp -n public/* build/ | true",
-    "build:storybook": "build-storybook -o ./build",
+    "build": "bsb -make-world && NODE_ENV=production yarn build:storybook && cp -n public/* www/ | true",
+    "build:storybook": "build-storybook -o ./www",
     "storybook": "start-storybook -p 6006 -s ./public",
     "start": "concurrently -c --kill-others 'yarn start:bsb' 'yarn storybook'",
     "start:bsb": "bsb -make-world -w",
