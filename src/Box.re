@@ -1,8 +1,8 @@
 module Border = {
+  open Emotion;
+
   type radius = [ `Zero | `Rounded | `Full ];
   type t = [`Zero | `One | `Twoo ];
-
-  open Emotion;
 
   let styles = (border) => {
     switch (border) {
@@ -27,6 +27,21 @@ module Border = {
   };
 };
 
+module Shadow = {
+  open Emotion;
+
+  type t = [`Zero | `Small | `Medium | `Large ];
+
+  let styles = (shadow: t) => {
+    switch (shadow) {
+      | `Zero => css([])
+      | `Small => css([unsafe("box-shadow", "0 4px 10px hsla(0, 0%, 0%, 0.05)")])
+      | `Medium => css([unsafe("box-shadow", "0 4px 10px hsla(0, 0%, 0%, 0.1)")])
+      | `Large => css([unsafe("box-shadow", "0 6px 24px hsla(0, 0%, 0%, 0.1)")])
+    };
+  };
+};
+
 [@react.component]
 let make =
     (
@@ -42,7 +57,7 @@ let make =
       ~borderBottom=?,
       ~borderLeft=?,
       ~borderRight=?,
-      /* ~shadow=?, */
+      ~shadow=`Zero,
       /* Container can have any ReactEvent, TODO: add all events here... */
       ~onClick=?,
       ~onMouseOver=?,
@@ -71,7 +86,8 @@ let make =
       Border.stylesWithDirection("bottom", borderBottom),
       Border.stylesWithDirection("left", borderLeft),
       Border.stylesWithDirection("right", borderRight),
-      Spacer.spaceStyles("padding", padding)
+      Spacer.spaceStyles("padding", padding),
+      Shadow.styles(shadow),
     ]);
 
   <div className ?onClick ?onMouseOver ?onMouseLeave> children </div>;

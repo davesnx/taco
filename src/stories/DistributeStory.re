@@ -5,7 +5,7 @@ module Stacks = {
   let make = () => {
     <Example
       title="Stack"
-      description="Stack distribute children elements on the Y axis. Adds consistent spacing between elements and align them horizontally or vertically">
+      description="Stack distribute a list of elements on the Y axis, one on top of the other. Adds consistent spacing between and align them horizontally or vertically. It's an abstraction over flexbox, providing just a set of features">
       <Row align=`Center distribute=`Center gap=10>
         <Box
           background=Colors.pink
@@ -51,7 +51,7 @@ module Rows = {
     <>
       <Example
         title="Row"
-        description="Row distribute children elements on the X axis. Adds consistent spacing between elements and align them horizontally or vertically">
+        description="Row distribute a list of elements on the X axis, one on the side of the other. Adds consistent spacing between and align them horizontally or vertically. It's an abstraction over flexbox, providing just a set of features.">
         <Stack align=`Center distribute=`Center gap=10>
           <Box
             background=Colors.pink

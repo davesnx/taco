@@ -3,7 +3,7 @@ open BsStorybook;
 module Columnes = {
   [@react.component]
   let make = () => {
-    <Example title="Columns">
+    <Example title="Columns" description="Columns provide a solid way to formalize the structure of content where some parts are fixed and some parts are fluid. Columns only specifies the space between them and Column only cares about it's width: Can be a percentage of the parent (Pct), ocupy the rest of the space (Fluid) or based on it's content (Auto).">
       <Stack gap=4>
         <Columns gap=4>
           <Column width={`Pct(1. /. 2.)}>

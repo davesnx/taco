@@ -3,7 +3,7 @@ open BsStorybook;
 module Inlines = {
   [@react.component]
   let make = () => {
-    <Example title="Inline">
+    <Example title="Inline" description="Inline provides the possibility to transform any element to inline, being able to fit it within text, for example.">
       <Box>
         <Inline>
           <Text size=`XSmall>

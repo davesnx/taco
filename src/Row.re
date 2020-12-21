@@ -41,7 +41,7 @@ let gapStyles = (~unit, ~fit) => {
 [@react.component]
 let make =
     (
-      ~gap,
+      ~gap=0,
       ~align: align=`Start,
       ~distribute=`Around,
       ~fullHeight=true,

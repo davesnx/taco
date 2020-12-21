@@ -1,4 +1,4 @@
-type size = [ | `XSmall | `Small | `Medium | `Large | `XLarge | `XXLarge];
+type size = [ | `XSmall | `Small | `Medium | `Large | `XLarge | `XXLarge | `XXXLarge];
 
 type weight = [
   | `Thin
@@ -23,7 +23,7 @@ type align = [ | `Left | `Center | `Right | `Justify];
 let make =
     (
       ~color=Colors.Black.alpha9,
-      ~size: size=`Medium,
+      ~size: size=`Small,
       ~weight: weight=`Regular,
       ~leading as _=`Normal,
       ~align=`Left,
@@ -35,12 +35,13 @@ let make =
           [%css {| font-family: "Wonder Unit Sans", "sans-serif" |}], */
       [%css "color: $color"],
       switch (size) {
-        | `XSmall => [%css "font-size: 14px"]
-        | `Small => [%css "font-size: 16px"]
-        | `Medium => [%css "font-size: 22px"]
-        | `Large => [%css "font-size: 36px"]
-        | `XLarge => [%css "font-size: 48px"]
-        | `XXLarge => [%css "font-size: 72px"]
+        | `XSmall => [%css "font-size: 12px"]
+        | `Small => [%css "font-size: 14px"]
+        | `Medium => [%css "font-size: 16px"]
+        | `Large => [%css "font-size: 22px"]
+        | `XLarge => [%css "font-size: 36px"]
+        | `XXLarge => [%css "font-size: 48px"]
+        | `XXXLarge => [%css "font-size: 72px"]
       },
         switch (weight) {
         | `Thin => [%css "font-weight: 100"]
@@ -72,5 +73,6 @@ let make =
           truncate ? truncateStyles : "", */
     ]);
 
+  /* TODO: Add "as" prop and render different kind of texts */
   <span className> {React.string(children)} </span>;
 };
