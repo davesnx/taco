@@ -10,7 +10,7 @@ Taco is a bunch of components that work as layout primitives written with Reason
 - A rich set of components that can represent all your app
 - Usable on Reason, JavaScript and TypeScript.
 
-⚠️ Not ready for consumption, is totally possible since I'm using them but isn't publish to npm or the bindings to JS/TS aren't polished.
+| ⚠️ Not ready for consumption, is totally possible since I'm using them but isn't publish to npm and the bindings to JS/TS aren't polished.
 
 <!--
 - Token generation
