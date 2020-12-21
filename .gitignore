@@ -11,3 +11,6 @@ npm-debug.log
 .merlin
 .bsb.lock
 *.bs.js
+
+# storybook
+storybook-static
