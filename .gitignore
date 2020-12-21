@@ -4,6 +4,8 @@ npm-debug.log
 /.cache/
 /dist/
 /build/
+/www/
+/public/
 
 # Bucklescript stuff
 /lib
