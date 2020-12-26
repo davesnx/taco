@@ -32,7 +32,7 @@ module Shadow = {
 
   type t = [`Zero | `Small | `Medium | `Large ];
 
-  let styles = (shadow: t) => {
+  let styles = (shadow) => {
     switch (shadow) {
       | `Zero => css([])
       | `Small => css([unsafe("box-shadow", "0 4px 10px hsla(0, 0%, 0%, 0.05)")])
@@ -45,7 +45,6 @@ module Shadow = {
 [@react.component]
 let make =
     (
-      ~inline=false,
       ~padding=0,
       ~height="auto",
       ~width="auto",
@@ -64,10 +63,10 @@ let make =
       ~onMouseLeave=?,
       ~children=React.null,
     ) => {
+
   let className =
     Cn.make([
       [%css "position: relative; flex-shrink: 0;"],
-      inline ? [%css "display: inline-block; "] : "",
       Belt.Option.isSome(onClick) ? [%css "cursor: pointer;"] : "",
       [%css "width: $width"],
       [%css "height: $height"],

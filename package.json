@@ -62,7 +62,7 @@
   "scripts": {
     "build": "bsb -make-world && NODE_ENV=production yarn build:storybook",
     "build:storybook": "build-storybook -o ./public",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --quiet",
     "start": "concurrently -c --kill-others 'yarn start:bsb' 'yarn storybook'",
     "start:bsb": "bsb -make-world -w",
     "start:webpack": "webpack-dev-server --config config/webpack.config.js --open",

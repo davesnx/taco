@@ -1,15 +1,15 @@
 module Main = [%styled.div
   {|
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-|}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  |}
 ];
 
-module Code = [%styled.code "color: white;"];
+module Code = [%styled.code "color: white; /* line-height: 1.5; */"];
 
 [@react.component]
 let make = (~children) => {

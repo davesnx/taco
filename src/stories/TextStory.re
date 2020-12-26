@@ -3,7 +3,7 @@ open BsStorybook;
 module Text = {
   [@react.component]
   let make = () => {
-    <Example title="Text" description="Texts abstracts you from the details of writting content, with strong defaults over regular HTML text.">
+    <Component title="Text" description="Texts abstracts you from the details of writting content, with strong defaults over regular HTML text.">
       <Stack gap=4>
         <Text size=`Large weight=`Black> "Black" </Text>
         <Text size=`Large weight=`Extrabold> "Extrabold" </Text>
@@ -14,7 +14,7 @@ module Text = {
         <Text size=`Large weight=`Light> "Light" </Text>
         <Text size=`Large weight=`Thin> "Thin" </Text>
       </Stack>
-    </Example>;
+    </Component>;
   };
 };
 
