@@ -16,3 +16,6 @@ npm-debug.log
 
 # storybook
 storybook-static
+.vercel
+
+_esy
