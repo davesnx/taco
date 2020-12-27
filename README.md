@@ -1,7 +1,5 @@
 # 🌮 taco
 
-### ⚠️ Not ready for consumption
-
 Taco is a bunch of components that work as layout primitives written with ReasonReact and styled-ppx available in JavaScript, TypeScript and Reason/OCaml.
 
 - Single-focused components
