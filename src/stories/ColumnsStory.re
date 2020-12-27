@@ -9,8 +9,8 @@ module Columnes = {
           <Columns gap=4>
             <Column width={`Pct(1. /. 2.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -21,8 +21,8 @@ module Columnes = {
             </Column>
             <Column width={`Pct(1. /. 2.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -35,8 +35,8 @@ module Columnes = {
           <Columns gap=4>
             <Column width={`Pct(1. /. 3.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -47,8 +47,8 @@ module Columnes = {
             </Column>
             <Column width={`Pct(1. /. 3.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -59,8 +59,8 @@ module Columnes = {
             </Column>
             <Column width={`Pct(1. /. 3.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -73,8 +73,8 @@ module Columnes = {
           <Columns gap=4>
             <Column width={`Pct(1. /. 4.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -85,8 +85,8 @@ module Columnes = {
             </Column>
             <Column width={`Pct(1. /. 4.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -97,8 +97,8 @@ module Columnes = {
             </Column>
             <Column width={`Pct(1. /. 4.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -109,8 +109,8 @@ module Columnes = {
             </Column>
             <Column width={`Pct(1. /. 4.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -123,8 +123,8 @@ module Columnes = {
           <Columns gap=4>
             <Column width={`Pct(1. /. 3.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -135,8 +135,8 @@ module Columnes = {
             </Column>
             <Column>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -149,8 +149,8 @@ module Columnes = {
           <Columns gap=4>
             <Column width={`Pct(2. /. 5.)}>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -161,8 +161,8 @@ module Columnes = {
             </Column>
             <Column width=`Auto>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -174,8 +174,8 @@ module Columnes = {
             </Column>
             <Column width=`Fluid>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -186,8 +186,8 @@ module Columnes = {
             </Column>
             <Column width=`Fluid>
               <Box
-                width="100%"
-                height="50px"
+                width=`Full
+                height=`Fixed(50)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
                 padding=4>
@@ -226,57 +226,57 @@ module Columnes = {
         <Stack gap=5>
           <Columns gap=1>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
           </Columns>
           <Columns gap=2>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
           </Columns>
           <Columns gap=3>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
           </Columns>
           <Columns gap=4>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
           </Columns>
           <Columns gap=5>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
             <Column>
-              <Box width="100%" height="50" background={Colors.Black.alpha2} />
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2} />
             </Column>
           </Columns>
         </Stack>
@@ -288,28 +288,28 @@ module Columnes = {
         <Stack gap=5>
           <Columns gap=2>
             <Column width=`Pct(1. /. 3.)>
-              <Box width="100%" height="50" background={Colors.Black.alpha2}>
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
                 <Align>
                   <Text>"Pct(1. /. 3.)"</Text>
                 </Align>
               </Box>
             </Column>
             <Column width=`Auto>
-              <Box padding=2 width="100%" height="50" background={Colors.Black.alpha2}>
+              <Box padding=2 width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
                 <Align>
                   <Text>"Auto"</Text>
                 </Align>
               </Box>
             </Column>
             <Column width=`Fluid>
-              <Box width="100%" height="50" background={Colors.Black.alpha2}>
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
                 <Align>
                   <Text>"Fluid"</Text>
                 </Align>
               </Box>
             </Column>
             <Column width=`Fluid>
-              <Box width="100%" height="50" background={Colors.Black.alpha2}>
+              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
                 <Align>
                   <Text>"Fluid"</Text>
                 </Align>

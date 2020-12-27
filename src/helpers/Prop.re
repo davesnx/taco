@@ -19,8 +19,9 @@ let make = (~name=?, ~typing=?, ~derivatives=?, ~description=?, ~children=?) => 
       })->React.array
       | None => React.null
     }}
+    <Spacer top=4 />
     {switch (description) {
-      | Some(desc) => <Spacer bottom=6 top=2> <Text size=`Medium weight=`Medium> desc </Text> </Spacer>
+      | Some(desc) => <Spacer bottom=6> <Text size=`Medium weight=`Medium> desc </Text> </Spacer>
       | None => React.null
     }}
     {switch (children) {

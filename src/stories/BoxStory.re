@@ -3,14 +3,14 @@ open BsStorybook;
 module Boxes = {
   [@react.component]
   let make = () => {
-    <Stack gap=8>
+    <Stack gap=10>
     <Component title="Box" description="Box is the basic element of taco, it's an abstraction over div with only capabilities about it's surroundings. It's used as a container, setting width/height, borders, background and padding. It doesn't care how the childrens are positioned.">
         <Spacer top=5 bottom=10>
           <Align x=`Center y=`Center>
             <Box
-              width="160"
-              height="80"
-              border={`Twoo(Colors.Black.alpha2)}
+              width=`Fixed(160)
+              height=`Fixed(80)
+              border={`Two(Colors.Black.alpha2)}
               borderRadius=`Zero
               background=Colors.pink
             />
@@ -19,49 +19,49 @@ module Boxes = {
         <Usage>
           {|
             <Box
-              width="160"
-              height="80"
-              border={`Twoo(Colors.Black.alpha2)}
+              width=`Fixed(160)
+              height=`Fixed(80)
+              border={`Two(Colors.Black.alpha2)}
               borderRadius=`Zero
               background=Colors.pink
             />
           |}
         </Usage>
         </Component>
-          <Prop name="border" typing="[`Zero | `One(Color) | `Twoo(Color) ]" derivatives=[| "borderTop", "borderBottom", "borderLeft", "borderRight" |]>
+        <Prop name="border" typing="[`Zero | `One(Color) | `Two(Color) ]" derivatives=[| "borderTop", "borderBottom", "borderLeft", "borderRight" |]>
           <Columns gap=5>
             <Column>
               <Box
-                width="100%"
-                height="80"
-                borderTop={`Twoo(Colors.Black.alpha2)}
+                width=`Full
+                height=`Fixed(80)
+                borderTop={`Two(Colors.Black.alpha2)}
                 borderRadius=`Zero
                 background=Colors.pink
               />
             </Column>
             <Column>
               <Box
-                width="100%"
-                height="80"
-                borderLeft={`Twoo(Colors.Black.alpha2)}
+                width=`Full
+                height=`Fixed(80)
+                borderLeft={`Two(Colors.Black.alpha2)}
                 borderRadius=`Zero
                 background=Colors.pink
               />
             </Column>
             <Column>
               <Box
-                width="100%"
-                height="80"
-                borderBottom={`Twoo(Colors.Black.alpha2)}
+                width=`Full
+                height=`Fixed(80)
+                borderBottom={`Two(Colors.Black.alpha2)}
                 borderRadius=`Zero
                 background=Colors.pink
               />
             </Column>
             <Column>
               <Box
-                width="100%"
-                height="80"
-                borderRight={`Twoo(Colors.Black.alpha2)}
+                width=`Full
+                height=`Fixed(80)
+                borderRight={`Two(Colors.Black.alpha2)}
                 borderRadius=`Zero
                 background=Colors.pink
               />
@@ -71,40 +71,40 @@ module Boxes = {
         <Columns gap=5>
           <Column>
             <Box
-              width="100%"
-              height="80"
-              borderTop={`Twoo(Colors.Black.alpha2)}
-              borderBottom={`Twoo(Colors.Black.alpha2)}
+              width=`Full
+              height=`Fixed(80)
+              borderTop={`Two(Colors.Black.alpha2)}
+              borderBottom={`Two(Colors.Black.alpha2)}
               borderRadius=`Zero
               background=Colors.pink
             />
           </Column>
           <Column>
             <Box
-              width="100%"
-              height="80"
-              borderLeft={`Twoo(Colors.Black.alpha2)}
-              borderRight={`Twoo(Colors.Black.alpha2)}
+              width=`Full
+              height=`Fixed(80)
+              borderLeft={`Two(Colors.Black.alpha2)}
+              borderRight={`Two(Colors.Black.alpha2)}
               borderRadius=`Zero
               background=Colors.pink
             />
           </Column>
           <Column>
             <Box
-              width="100%"
-              height="80"
-              borderLeft={`Twoo(Colors.Black.alpha2)}
-              borderBottom={`Twoo(Colors.Black.alpha2)}
+              width=`Full
+              height=`Fixed(80)
+              borderLeft={`Two(Colors.Black.alpha2)}
+              borderBottom={`Two(Colors.Black.alpha2)}
               borderRadius=`Zero
               background=Colors.pink
             />
           </Column>
           <Column>
             <Box
-              width="100%"
-              height="80"
-              borderRight={`Twoo(Colors.Black.alpha2)}
-              borderTop={`Twoo(Colors.Black.alpha2)}
+              width=`Full
+              height=`Fixed(80)
+              borderRight={`Two(Colors.Black.alpha2)}
+              borderTop={`Two(Colors.Black.alpha2)}
               borderRadius=`Zero
               background=Colors.pink
             />
@@ -112,30 +112,173 @@ module Boxes = {
         </Columns>
         </Prop>
         <Prop name="shadow" typing="[`Zero | `Small | `Medium | `Large ]">
-        <Row gap=5>
-          <Box
-            width="240"
-            height="80"
-            background=Colors.white
-            shadow=`Small
-          >
-          </Box>
-          <Box
-            width="240"
-            height="80"
-            background=Colors.white
-            shadow=`Medium
-          >
-          </Box>
-          <Box
-            width="240"
-            height="80"
-            background=Colors.white
-            shadow=`Large
-          >
-          </Box>
-        </Row>
-      </Prop>
+          <Row gap=5>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.white
+              shadow=`Small
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.white
+              shadow=`Medium
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.white
+              shadow=`Large
+            >
+            </Box>
+          </Row>
+        </Prop>
+        <Prop name="background" typing="Colors">
+          <Row gap=5>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.pink
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.dirty
+            >
+            </Box>
+          </Row>
+        </Prop>
+        <Prop name="backgroundHover" typing="Colors">
+          <Row gap=5>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+              backgroundHover=Colors.pink
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.pink
+              backgroundHover=Colors.Pink.dirty
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.dirty
+              backgroundHover=Colors.black
+            >
+            </Box>
+          </Row>
+        </Prop>
+        <Prop name="padding" derivatives=[|"paddingTop", "paddingLeft", "paddingRight", "paddingBottom" |] typing="int">
+          <Row gap=5>
+            <Box
+              padding=2
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+            >
+              <Box width=`Full height=`Full background=Colors.Pink.dirty></Box>
+            </Box>
+            <Box
+              padding=4
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+            >
+              <Box width=`Full height=`Full background=Colors.Pink.dirty></Box>
+            </Box>
+            <Box
+              padding=6
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+            >
+              <Box width=`Full height=`Full background=Colors.Pink.dirty></Box>
+            </Box>
+          </Row>
+        </Prop>
+        <Prop name="width" typing="[ `Pct(float) | `Full | `Fixed(int) | `Auto ]">
+          <Row gap=5>
+            <Box
+              padding=2
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+            >
+              <Align>
+                <Text>"Fixed(240)"</Text>
+              </Align>
+            </Box>
+            <Box
+              padding=4
+              width=`Fixed(100)
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+            >
+              <Align>
+                <Text>"Fixed(100)"</Text>
+              </Align>
+            </Box>
+            <Box
+              padding=6
+              width=`Auto
+              height=`Fixed(80)
+              background=Colors.Pink.alpha8
+            >
+              <Align>
+                <Text>"Auto"</Text>
+              </Align>
+            </Box>
+          </Row>
+        </Prop>
+        <Prop name="height" typing="[ `Pct(float) | `Full | `Fixed(int) | `Auto ]">
+          <Row gap=5>
+            <Box
+              padding=2
+              width=`Fixed(80)
+              height=`Fixed(240)
+              background=Colors.Pink.alpha8
+            >
+              <Align>
+                <Text>"Fixed(240)"</Text>
+              </Align>
+            </Box>
+            <Box
+              padding=4
+              width=`Fixed(80)
+              height=`Fixed(100)
+              background=Colors.Pink.alpha8
+            >
+              <Align>
+                <Text>"Fixed(100)"</Text>
+              </Align>
+            </Box>
+            <Box
+              padding=6
+              width=`Fixed(80)
+              height=`Auto
+              background=Colors.Pink.alpha8
+            >
+              <Align>
+                <Text>"Auto"</Text>
+              </Align>
+            </Box>
+          </Row>
+        </Prop>
     </Stack>
   };
 };

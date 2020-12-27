@@ -1,7 +1,8 @@
 type align =
   [ `Start
+  | `Center
   | `End
-  | `Center ];
+  ];
 
 [@react.component]
 let make =

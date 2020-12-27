@@ -12,10 +12,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`Start y=`Start>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Start y=`Start" </Text>
@@ -25,10 +25,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`Center y=`Start>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -38,10 +38,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`End y=`Start>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -51,10 +51,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`Start y=`Center>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -64,10 +64,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`Center y=`Center>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -77,10 +77,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`End y=`Center>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -90,10 +90,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`Start y=`End>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -103,10 +103,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`Center y=`End>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -116,10 +116,10 @@ module Algins = {
                 background=Colors.pink
                 border={`One(Colors.Pink.dirty)}
                 padding=2
-                height="120"
-                width="200">
+                height=`Fixed(120)
+                width=`Fixed(200)>
                 <Align x=`End y=`End>
-                  <Box background=Colors.Pink.dirty height="30" width="30" />
+                  <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
@@ -127,15 +127,16 @@ module Algins = {
           </Grid>
           <Spacer bottom=10 />
       <Usage>
-        "<Align x=`Start y=`Start>
-  /* one children */
-</Align>
-      "
+        {|
+        <Align x=`Start y=`Start>
+          /* one children */
+        </Align>
+        |}
       </Usage>
       </Component>
-      <Prop name="x" typing="[ `Start | `End | `Center ]" />
-      <Prop name="y" typing="[ `Start | `End | `Center ]" />
+      <Prop name="x" typing="[ `Start | `Center | `End ]" />
+      <Prop name="y" typing="[ `Start | `Center | `End ]" />
     </Stack>;
 };
 let module_ = [%bs.raw "module"];
-Story.(storiesOf("Algin", module_)->(add("Algin", () => <Algins />)));
+Story.(storiesOf("Align", module_)->(add("Align", () => <Algins />)));

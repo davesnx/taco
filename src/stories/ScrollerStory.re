@@ -2,35 +2,35 @@ open BsStorybook;
 
 module ScrollerExample = {
   [@react.component]
-  let make = (~top=<Box background=Colors.Pink.dirty width="120" height="16" />, ~bottom=<Box background=Colors.Pink.dirty width="120" height="16" />) => {
-    <Box background=Colors.white width="120" height="240">
+  let make = (~top=<Box borderRadius=`Zero background=Colors.Pink.dirty width=`Fixed(120) height=`Fixed(16) />, ~bottom=<Box borderRadius=`Zero background=Colors.Pink.dirty width=`Fixed(120) height=`Fixed(16) />) => {
+    <Box background=Colors.white width=`Fixed(120) height=`Fixed(240)>
       <Scroller
         top
         bottom>
         <Stack gap=1>
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
-          <Box background=Colors.pink width="120" height="16" />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+          <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
         </Stack>
       </Scroller>
     </Box>
@@ -49,16 +49,16 @@ module Scrollers = {
       <Usage>
         {|
           <Scroller
-            top={<Box background=Colors.Pink.dirty width="120" height="16" />}
-            bottom={<Box background=Colors.Pink.dirty width="120" height="16" />}>
+            top={<Box background=Colors.Pink.dirty width=`Fixed(120) height=`Fixed(16) />}
+            bottom={<Box background=Colors.Pink.dirty width=`Fixed(120) height=`Fixed(16) />}>
             <Stack gap=1>
-              <Box background=Colors.pink width="120" height="16" />
-              <Box background=Colors.pink width="120" height="16" />
-              <Box background=Colors.pink width="120" height="16" />
-              <Box background=Colors.pink width="120" height="16" />
-              <Box background=Colors.pink width="120" height="16" />
-              <Box background=Colors.pink width="120" height="16" />
-              <Box background=Colors.pink width="120" height="16" />
+              <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+              <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+              <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+              <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+              <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+              <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
+              <Box background=Colors.pink width=`Fixed(120) height=`Fixed(16) />
               /* [...] */
             </Stack>
           </Scroller>

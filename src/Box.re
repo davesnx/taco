@@ -2,14 +2,14 @@ module Border = {
   open Emotion;
 
   type radius = [ `Zero | `Rounded | `Full ];
-  type t = [`Zero | `One | `Twoo ];
+  type t = [`Zero | `One | `Two ];
 
   let styles = (border) => {
     switch (border) {
       | Some(b) => switch (b) {
         | `Zero => css([unsafe("border", "none")])
         | `One(color) => css([unsafe("border", "1px solid " ++ color)])
-        | `Twoo(color) => css([unsafe("border", "2px solid " ++ color)])
+        | `Two(color) => css([unsafe("border", "2px solid " ++ color)])
         }
       | None => ""
     }
@@ -20,7 +20,7 @@ module Border = {
       | Some(b) => switch (b) {
         | `Zero => css([unsafe("border-" ++ direction, "none")])
         | `One(color) => css([unsafe("border-" ++ direction, "1px solid " ++ color)])
-        | `Twoo(color) => css([unsafe("border-" ++ direction, "2px solid " ++ color)])
+        | `Two(color) => css([unsafe("border-" ++ direction, "2px solid " ++ color)])
         }
       | None => ""
     }
@@ -50,8 +50,8 @@ let make =
       ~paddingBottom=0,
       ~paddingLeft=0,
       ~paddingRight=0,
-      ~height="auto",
-      ~width="auto",
+      ~height=`Auto,
+      ~width=`Auto,
       ~background=Colors.white,
       ~backgroundHover=?,
       ~borderRadius=`Rounded,
@@ -61,22 +61,21 @@ let make =
       ~borderLeft=?,
       ~borderRight=?,
       ~shadow=`Zero,
-      /* Container can have any ReactEvent, TODO: add all events here... */
+      /* Box can have any ReactEvent, TODO: add all events here... */
       ~onClick=?,
       ~onMouseOver=?,
       ~onMouseLeave=?,
       ~children=React.null,
     ) => {
-
   let className =
     Cn.make([
       [%css "position: relative; flex-shrink: 0;"],
       Belt.Option.isSome(onClick) ? [%css "cursor: pointer;"] : "",
-      [%css "width: $width"],
-      [%css "height: $height"],
+      Unit.Size.Height.styles(height),
+      Unit.Size.Width.styles(width),
       [%css "background: $background"],
       switch (backgroundHover) {
-        | Some(background) => [%css "&:hover { background: $background; }"]
+        | Some(background) => [%css ":hover { background: $background; }"]
         | None => ""
       },
       switch (borderRadius) {

@@ -11,8 +11,8 @@ module Inlines = {
           </Text>
           <Spacer left=2 right=2>
             <Box
-              width="24"
-              height="24"
+              width=`Fixed(24)
+              height=`Fixed(24)
               border={`One(Colors.Black.alpha2)}
               background=Colors.pink
             />
@@ -21,8 +21,8 @@ module Inlines = {
             "and will try as well, Inline > Spacer > Box, like an icon:"
           </Text>
           <Box
-            width="24"
-            height="24"
+            width=`Fixed(24)
+            height=`Fixed(24)
             border={`One(Colors.Black.alpha2)}
             background=Colors.pink
           />
@@ -40,8 +40,8 @@ module Inlines = {
             </Text>
             <Spacer left=2 right=2>
               <Box
-                width="24"
-                height="24"
+                width=`Fixed(24)
+                height=`Fixed(24)
                 border={`One(Colors.Black.alpha2)}
                 background=Colors.pink
               />
@@ -50,8 +50,8 @@ module Inlines = {
               "and will try as well, Inline > Spacer > Box, like an icon:"
             </Text>
             <Box
-              width="24"
-              height="24"
+              width=`Fixed(24)
+              height=`Fixed(24)
               border={`One(Colors.Black.alpha2)}
               background=Colors.pink
             />
