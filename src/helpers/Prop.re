@@ -8,7 +8,7 @@ let make = (~name=?, ~typing=?, ~derivatives=?, ~description=?, ~children=?) => 
           | None => React.null
         }}
         {switch (typing) {
-          | Some(t) => <Box paddingRight=5 paddingLeft=5 padding=2 background=Colors.Black.alpha2><Text size=`Small weight=`Medium> t </Text></Box>
+          | Some(t) => <Box paddingRight=5 paddingLeft=5 padding=1 background=Colors.Black.alpha2><Text size=`Small weight=`Medium> t </Text></Box>
           | None => React.null
         }}
       </Row>
