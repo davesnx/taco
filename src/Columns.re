@@ -12,7 +12,7 @@ module ColumnsGapProvider = {
 let make =
     (~children, ~fullHeight=true, ~gap=0) => {
   let value = gap * 4;
-  let margin = Utils.toPx(value);
+  let margin = Unit.toPx(value);
   let className =
     Cn.make([
       [%css "display: flex; flex-direction: row; width: 100%;"],

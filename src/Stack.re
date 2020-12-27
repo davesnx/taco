@@ -12,7 +12,7 @@ type distribute =
   | `End ];
 
 let gapStyles = (~unit, ~fit) => {
-  let gap = Utils.toPx(unit * 4);
+  let gap = Unit.toPx(unit * 4);
 
   switch (fit) {
   | true => [%css {|
