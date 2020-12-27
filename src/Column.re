@@ -23,10 +23,12 @@ let make = (~width=`Fluid, ~children=?) => {
     }
   ]);
 
-  <div className>
-    {switch (children) {
-    | None => React.null
-    | Some(c) => c
-    }}
-  </div>
+  <DataAttribute name="Column">
+    <div className>
+      {switch (children) {
+      | None => React.null
+      | Some(c) => c
+      }}
+    </div>
+  </DataAttribute>
 };

@@ -4,29 +4,29 @@ module Boxes = {
   [@react.component]
   let make = () => {
     <Stack gap=10>
-    <Component title="Box" description="Box is the basic element of taco, it's an abstraction over div with only capabilities about it's surroundings. It's used as a container, setting width/height, borders, background and padding. It doesn't care how the childrens are positioned.">
-        <Spacer top=5 bottom=10>
-          <Align x=`Center y=`Center>
-            <Box
-              width=`Fixed(160)
-              height=`Fixed(80)
-              border={`Two(Colors.Black.alpha2)}
-              borderRadius=`Zero
-              background=Colors.pink
-            />
-          </Align>
-        </Spacer>
-        <Usage>
-          {|
-            <Box
-              width=`Fixed(160)
-              height=`Fixed(80)
-              border={`Two(Colors.Black.alpha2)}
-              borderRadius=`Zero
-              background=Colors.pink
-            />
-          |}
-        </Usage>
+      <Component title="Box" description="Box is the basic element of taco, it's an abstraction over div with only capabilities about it's surroundings. It's used as a container, setting width/height, borders, background and padding. It doesn't care how the childrens are positioned.">
+          <Spacer top=5 bottom=10>
+            <Align x=`Center y=`Center>
+              <Box
+                width=`Fixed(160)
+                height=`Fixed(80)
+                border={`Two(Colors.Black.alpha2)}
+                borderRadius=`Zero
+                background=Colors.pink
+              />
+            </Align>
+          </Spacer>
+          <Usage>
+            {|
+              <Box
+                width=`Fixed(160)
+                height=`Fixed(80)
+                border={`Two(Colors.Black.alpha2)}
+                borderRadius=`Zero
+                background=Colors.pink
+              />
+            |}
+          </Usage>
         </Component>
         <Prop name="border" typing="[`Zero | `One(Color) | `Two(Color) ]" derivatives=[| "borderTop", "borderBottom", "borderLeft", "borderRight" |]>
           <Columns gap=5>
@@ -111,26 +111,51 @@ module Boxes = {
           </Column>
         </Columns>
         </Prop>
+        <Prop name="borderRadius" typing="[ `Zero | `Rounded | `Full ]">
+          <Row gap=5>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.dirty
+              borderRadius=`Zero
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.dirty
+              borderRadius=`Rounded
+            >
+            </Box>
+            <Box
+              width=`Fixed(240)
+              height=`Fixed(80)
+              background=Colors.Pink.dirty
+              borderRadius=`Full
+            >
+            </Box>
+          </Row>
+        </Prop>
         <Prop name="shadow" typing="[`Zero | `Small | `Medium | `Large ]">
           <Row gap=5>
             <Box
               width=`Fixed(240)
               height=`Fixed(80)
-              background=Colors.white
+              background=Colors.Pink.alpha8
               shadow=`Small
             >
             </Box>
             <Box
               width=`Fixed(240)
               height=`Fixed(80)
-              background=Colors.white
+              background=Colors.Pink.alpha8
               shadow=`Medium
             >
             </Box>
             <Box
               width=`Fixed(240)
               height=`Fixed(80)
-              background=Colors.white
+              background=Colors.Pink.alpha8
               shadow=`Large
             >
             </Box>
@@ -178,7 +203,7 @@ module Boxes = {
               width=`Fixed(240)
               height=`Fixed(80)
               background=Colors.Pink.dirty
-              backgroundHover=Colors.black
+              backgroundHover=Colors.Pink.dark
             >
             </Box>
           </Row>

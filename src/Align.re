@@ -26,5 +26,7 @@ let make =
       }
     ]);
 
-  <div className> children </div>;
+  <DataAttribute name="Align">
+    <div className> children </div>
+  </DataAttribute>
 };

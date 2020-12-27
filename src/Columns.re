@@ -29,6 +29,8 @@ let make =
     ]);
 
   <ColumnsGapProvider value>
-    <div className> children </div>
+    <DataAttribute name="Columns">
+      <div className> children </div>
+    </DataAttribute>
   </ColumnsGapProvider>;
 };

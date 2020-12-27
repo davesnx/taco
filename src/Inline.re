@@ -17,7 +17,9 @@ let make = (~align=`Center, ~children) => {
       }
   ]);
 
-  <span className>
-    children
-  </span>
+  <DataAttribute name="Inline">
+    <span className>
+      children
+    </span>
+  </DataAttribute>
 }

@@ -16,11 +16,13 @@ module Overlay = [%styled.div {|
 let make = (~isOpen=false, ~children=?) => {
 
   <Animate play=isOpen>
-    <Overlay>
-      {switch (children) {
-      | None => React.null
-      | Some(c) => c
-      }}
-    </Overlay>
+    <DataAttribute name="Overlay">
+      <Overlay>
+        {switch (children) {
+        | None => React.null
+        | Some(c) => c
+        }}
+      </Overlay>
+    </DataAttribute>
   </Animate>;
 }

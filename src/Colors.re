@@ -11,4 +11,5 @@ let pink = "rgb(255, 192, 203)";
 module Pink = {
   let alpha8 = "rgba(255, 192, 203, 0.8)";
   let dirty = "rgb(224, 105, 126)";
+  let dark = "rgb(132, 62, 74)";
 }

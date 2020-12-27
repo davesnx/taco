@@ -67,5 +67,7 @@ let make =
       gapStyles(~unit=gap, ~fit=false),
     ]);
 
-  <div className> children </div>;
+  <DataAttribute name="Stack">
+    <div className> children </div>
+  </DataAttribute>
 };

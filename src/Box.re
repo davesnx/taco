@@ -89,12 +89,14 @@ let make =
       Border.stylesWithDirection("bottom", borderBottom),
       Border.stylesWithDirection("left", borderLeft),
       Border.stylesWithDirection("right", borderRight),
+      Spacer.spaceStyles("padding", padding),
       Spacer.spaceDirectionStyles("padding", "top", paddingTop),
       Spacer.spaceDirectionStyles("padding", "bottom", paddingBottom),
       Spacer.spaceDirectionStyles("padding", "left", paddingLeft),
       Spacer.spaceDirectionStyles("padding", "right", paddingRight),
-      Spacer.spaceStyles("padding", padding),
     ]);
 
-  <div className ?onClick ?onMouseOver ?onMouseLeave> children </div>;
+  <DataAttribute name="Box">
+    <div className ?onClick ?onMouseOver ?onMouseLeave> children </div>
+  </DataAttribute>
 };

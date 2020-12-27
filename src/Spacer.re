@@ -38,10 +38,12 @@ let make =
       spaceStyles(inner ? "margin" : "padding", all),
     ]);
 
-  <div className>
-    {switch (children) {
-     | None => React.null
-     | Some(c) => c
-     }}
-  </div>;
+  <DataAttribute name="Spacer">
+    <div className>
+      {switch (children) {
+      | None => React.null
+      | Some(c) => c
+      }}
+    </div>
+  </DataAttribute>
 };

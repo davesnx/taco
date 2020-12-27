@@ -211,7 +211,7 @@ module Columnes = {
       </Usage>
       </Component>
       <Spacer bottom=4 />
-        <Prop name="Columns gap" typing="int">
+        <Prop name="gap" typing="int">
         <Columns>
         <Column width=`Auto>
           <Stack gap=5>
@@ -284,40 +284,42 @@ module Columnes = {
         </Columns>
       </Prop>
       <Spacer bottom=4 />
-      <Prop name="Column Width" typing="[ `Pct(float) | `Fluid | `Auto ]">
-        <Stack gap=5>
-          <Columns gap=2>
-            <Column width=`Pct(1. /. 3.)>
-              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
-                <Align>
-                  <Text>"Pct(1. /. 3.)"</Text>
-                </Align>
-              </Box>
-            </Column>
-            <Column width=`Auto>
-              <Box padding=2 width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
-                <Align>
-                  <Text>"Auto"</Text>
-                </Align>
-              </Box>
-            </Column>
-            <Column width=`Fluid>
-              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
-                <Align>
-                  <Text>"Fluid"</Text>
-                </Align>
-              </Box>
-            </Column>
-            <Column width=`Fluid>
-              <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
-                <Align>
-                  <Text>"Fluid"</Text>
-                </Align>
-              </Box>
-            </Column>
-          </Columns>
-        </Stack>
-      </Prop>
+      <Component title="Column">
+        <Prop name="width" typing="[ `Pct(float) | `Fluid | `Auto ]">
+          <Stack gap=5>
+            <Columns gap=2>
+              <Column width=`Pct(1. /. 3.)>
+                <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
+                  <Align>
+                    <Text>"Pct(1. /. 3.)"</Text>
+                  </Align>
+                </Box>
+              </Column>
+              <Column width=`Auto>
+                <Box padding=2 width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
+                  <Align>
+                    <Text>"Auto"</Text>
+                  </Align>
+                </Box>
+              </Column>
+              <Column width=`Fluid>
+                <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
+                  <Align>
+                    <Text>"Fluid"</Text>
+                  </Align>
+                </Box>
+              </Column>
+              <Column width=`Fluid>
+                <Box width=`Full height=`Fixed(50) background={Colors.Black.alpha2}>
+                  <Align>
+                    <Text>"Fluid"</Text>
+                  </Align>
+                </Box>
+              </Column>
+            </Columns>
+          </Stack>
+        </Prop>
+      </Component>
     </Stack>
   };
 };
