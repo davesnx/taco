@@ -2,7 +2,7 @@ open BsStorybook;
 module Algins = {
   [@react.component]
   let make = () =>
-    <Stack gap=3>
+    <Stack gap=8>
       <Component
         title="Align"
         description="Align will center the children element on the X axis and Y axis. It's designed to only align one element.">
@@ -125,13 +125,16 @@ module Algins = {
               <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
             </Stack>
           </Grid>
-      </Component>
+          <Spacer bottom=10 />
       <Usage>
         "<Align x=`Start y=`Start>
   /* one children */
 </Align>
       "
       </Usage>
+      </Component>
+      <Prop name="x" typing="[ `Start | `End | `Center ]" />
+      <Prop name="y" typing="[ `Start | `End | `Center ]" />
     </Stack>;
 };
 let module_ = [%bs.raw "module"];

@@ -198,7 +198,7 @@ module Columnes = {
             </Column>
           </Columns>
         </Stack>
-      </Component>
+      <Spacer bottom=10 />
       <Usage>
         {|
           <Columns gap=4>
@@ -209,8 +209,9 @@ module Columnes = {
           </Columns>
         |}
       </Usage>
+      </Component>
       <Spacer bottom=4 />
-      <Prop name="Columns" typing="gap=int">
+        <Prop name="Columns gap" typing="int">
         <Columns>
         <Column width=`Auto>
           <Stack gap=5>
@@ -283,7 +284,7 @@ module Columnes = {
         </Columns>
       </Prop>
       <Spacer bottom=4 />
-      <Prop name="Column" typing="width=[ `Pct(float) | `Fluid | `Auto ]">
+      <Prop name="Column Width" typing="[ `Pct(float) | `Fluid | `Auto ]">
         <Stack gap=5>
           <Columns gap=2>
             <Column width=`Pct(1. /. 3.)>

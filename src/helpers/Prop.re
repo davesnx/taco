@@ -1,18 +1,31 @@
 [@react.component]
-let make = (~name=?, ~typing=?, ~description=?, ~children) => {
+let make = (~name=?, ~typing=?, ~derivatives=?, ~description=?, ~children=?) => {
   <Container>
-    {switch (name) {
-      | Some(n) => <Spacer bottom=3> <Text size=`Large weight=`Semibold> n </Text> </Spacer>
-      | None => React.null
-    }}
-    {switch (typing) {
-      | Some(t) => <Spacer bottom=3 top=2> <Text size=`Medium weight=`Medium > t </Text> </Spacer>
+    <Spacer bottom=4>
+      <Row align=`Center distribute=`Start gap=5>
+        {switch (name) {
+          | Some(n) => <Text size=`Large weight=`Semibold> n </Text>
+          | None => React.null
+        }}
+        {switch (typing) {
+          | Some(t) => <Box paddingRight=5 paddingLeft=5 padding=2 background=Colors.Black.alpha2><Text size=`Small weight=`Medium> t </Text></Box>
+          | None => React.null
+        }}
+      </Row>
+    </Spacer>
+    {switch (derivatives) {
+      | Some(der) => der->Array.map(derivative => {
+        <Text size=`Medium weight=`Medium> derivative </Text>
+      })->React.array
       | None => React.null
     }}
     {switch (description) {
-      | Some(desc) => <Spacer bottom=6 top=2> <Text size=`Medium weight=`Medium > desc </Text> </Spacer>
+      | Some(desc) => <Spacer bottom=6 top=2> <Text size=`Medium weight=`Medium> desc </Text> </Spacer>
       | None => React.null
     }}
-    children
+    {switch (children) {
+      | Some(c) => c
+      | None => React.null
+    }}
   </Container>;
 };

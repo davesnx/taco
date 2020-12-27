@@ -3,7 +3,7 @@ open BsStorybook;
 module Boxes = {
   [@react.component]
   let make = () => {
-    <Stack gap=5>
+    <Stack gap=8>
     <Component title="Box" description="Box is the basic element of taco, it's an abstraction over div with only capabilities about it's surroundings. It's used as a container, setting width/height, borders, background and padding. It doesn't care how the childrens are positioned.">
         <Spacer top=5 bottom=10>
           <Align x=`Center y=`Center>
@@ -16,8 +16,19 @@ module Boxes = {
             />
           </Align>
         </Spacer>
-    </Component>
-          <Prop name="Border" typing="[`Zero | `One(Color) | `Twoo(Color) ]">
+        <Usage>
+          {|
+            <Box
+              width="160"
+              height="80"
+              border={`Twoo(Colors.Black.alpha2)}
+              borderRadius=`Zero
+              background=Colors.pink
+            />
+          |}
+        </Usage>
+        </Component>
+          <Prop name="border" typing="[`Zero | `One(Color) | `Twoo(Color) ]" derivatives=[| "borderTop", "borderBottom", "borderLeft", "borderRight" |]>
           <Columns gap=5>
             <Column>
               <Box
@@ -100,8 +111,7 @@ module Boxes = {
           </Column>
         </Columns>
         </Prop>
-        <Spacer bottom=4 />
-        <Prop name="Shadow" typing="[`Zero | `Small | `Medium | `Large ]">
+        <Prop name="shadow" typing="[`Zero | `Small | `Medium | `Large ]">
         <Row gap=5>
           <Box
             width="240"

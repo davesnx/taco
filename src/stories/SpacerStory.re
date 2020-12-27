@@ -3,12 +3,28 @@ open BsStorybook;
 module Spacers = {
   [@react.component]
   let make = () => {
-    <Component title="Spacer" description="Spacer provides a unified way to draw space between elements. It could be just by itself (<Spacer top=1 />) or wrapping other elements.">
+    <Stack gap=6>
+    <Component title="Spacer" description="Spacer provides a unified way to draw space between elements. Can wrap a component or be a self closing element.">
       <Spacer bottom=4>
         <Box background=Colors.pink width="120" height="40" />
       </Spacer>
       <Box background=Colors.pink width="120" height="120" />
-    </Component>;
+      <Spacer bottom=6 />
+      <Usage>
+        {|
+          <Spacer bottom=4>
+            <Box background=Colors.pink width="120" height="40" />
+          </Spacer>
+          <Box background=Colors.pink width="120" height="120" />
+        |}
+      </Usage>
+    </Component>
+    <Prop name="top" typing="int" />
+    <Prop name="bottom" typing="int" />
+    <Prop name="right" typing="int" />
+    <Prop name="left" typing="int" />
+    <Prop name="all" typing="int" />
+    </Stack>
   };
 };
 

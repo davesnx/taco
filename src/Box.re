@@ -46,6 +46,10 @@ module Shadow = {
 let make =
     (
       ~padding=0,
+      ~paddingTop=0,
+      ~paddingBottom=0,
+      ~paddingLeft=0,
+      ~paddingRight=0,
       ~height="auto",
       ~width="auto",
       ~background=Colors.white,
@@ -80,13 +84,17 @@ let make =
         | `Rounded => [%css "border-radius: 2px"]
         | `Full => [%css "border-radius: 999px"]
       },
+      Shadow.styles(shadow),
       Border.styles(border),
       Border.stylesWithDirection("top", borderTop),
       Border.stylesWithDirection("bottom", borderBottom),
       Border.stylesWithDirection("left", borderLeft),
       Border.stylesWithDirection("right", borderRight),
+      Spacer.spaceDirectionStyles("padding", "top", paddingTop),
+      Spacer.spaceDirectionStyles("padding", "bottom", paddingBottom),
+      Spacer.spaceDirectionStyles("padding", "left", paddingLeft),
+      Spacer.spaceDirectionStyles("padding", "right", paddingRight),
       Spacer.spaceStyles("padding", padding),
-      Shadow.styles(shadow),
     ]);
 
   <div className ?onClick ?onMouseOver ?onMouseLeave> children </div>;

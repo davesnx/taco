@@ -25,20 +25,21 @@ module Stacks = {
           <Box background=Colors.Pink.dirty height="30" width="100" />
           <Box background=Colors.Pink.dirty height="30" width="100" />
         </Stack>
+        <Spacer bottom=10 />
+        <Usage>
+          {|
+    <Stack align=`Center distribute=`Between gap=2>
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+    </Stack>
+          |}
+        </Usage>
       </Component>
-      <Usage>
-        {|
-  <Stack align=`Center distribute=`Between gap=2>
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-  </Stack>
-        |}
-      </Usage>
       <Spacer bottom=4 />
-      <Prop name="Distribute" typing="[ `Around | `Between | `Evenly | `Start | `Center | `End ]">
+      <Prop name="distribute" typing="[ `Around | `Between | `Evenly | `Start | `Center | `End ]">
         <Spacer top=4 />
         <Row align=`Center distribute=`Around gap=10>
           <Box>
@@ -128,7 +129,7 @@ module Stacks = {
         </Row>
       </Prop>
       <Spacer bottom=6 />
-      <Prop name="Align" typing="[ `Start | `End | `Center ]">
+      <Prop name="align" typing="[ `Start | `End | `Center ]">
         <Row distribute=`Center gap=15>
           <Box>
           <Header title="Start" />
@@ -175,7 +176,7 @@ module Stacks = {
         </Row>
       </Prop>
       <Spacer bottom=4 />
-      <Prop name="Gap" typing="int">
+      <Prop name="gap" typing="int">
         <Spacer top=4 />
         <Row align=`Center distribute=`Around gap=5>
           <Box>
@@ -310,20 +311,21 @@ module Rows = {
           <Box background=Colors.Pink.dirty height="100" width="30" />
           <Box background=Colors.Pink.dirty height="100" width="30" />
         </Row>
+        <Spacer bottom=10 />
+        <Usage>
+          {|
+    <Row align=`Center distribute=`Between gap=2>
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+      <Box background=Colors.Pink.dirty height="30" width="300" />
+    </Row>
+          |}
+        </Usage>
       </Component>
-      <Usage>
-        {|
-  <Row align=`Center distribute=`Between gap=2>
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-    <Box background=Colors.Pink.dirty height="30" width="300" />
-  </Row>
-        |}
-      </Usage>
       <Spacer bottom=4 />
-      <Prop name="Distribute" typing="[ `Around | `Between | `Evenly | `Start | `Center | `End ]">
+      <Prop name="distribute" typing="[ `Around | `Between | `Evenly | `Start | `Center | `End ]">
         <Spacer top=4 />
         <Row align=`Center distribute=`Around gap=10>
           <Box>
@@ -413,7 +415,7 @@ module Rows = {
         </Row>
       </Prop>
       <Spacer bottom=6 />
-      <Prop name="Align" typing="[ `Start | `End | `Center ]">
+      <Prop name="align" typing="[ `Start | `End | `Center ]">
         <Row distribute=`Center gap=15>
           <Box>
           <Header title="Start" />
@@ -460,7 +462,7 @@ module Rows = {
         </Row>
       </Prop>
       <Spacer bottom=4 />
-      <Prop name="Gap" typing="int">
+      <Prop name="gap" typing="int">
         <Spacer top=4 />
         <Row align=`Center distribute=`Around gap=5>
           <Box>
