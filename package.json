@@ -1,6 +1,6 @@
 {
   "name": "taco-ui",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "",
   "author": "davesnx",
   "license": "MIT",
@@ -60,14 +60,15 @@
     ]
   },
   "scripts": {
-    "build": "bsb -make-world && NODE_ENV=production yarn build:storybook",
+    "build:re": "bsb -make-world",
+    "build": "yarn build:re && NODE_ENV=production yarn build:storybook",
     "build:storybook": "build-storybook -o ./public",
     "storybook": "start-storybook -p 6006 --quiet",
     "start": "concurrently -c --kill-others 'yarn start:bsb' 'yarn storybook'",
     "start:bsb": "bsb -make-world -w",
     "start:webpack": "webpack-dev-server --config config/webpack.config.js --open",
     "clean": "bsb -clean-world",
-    "test": "bsb -make-world && echo 1",
+    "test": "echo 1",
     "format": "bsrefmt --in-place */**/*.re */*.re"
   }
 }
