@@ -1,9 +1,11 @@
+[@genType]
 type align =
   [ `Start
   | `Center
   | `End
   ];
 
+[@genType "Align"]
 [@react.component]
 let make =
     (
