@@ -1,5 +1,6 @@
 {
   "name": "taco-ui",
+  "version": "0.0.5",
   "reason": {
     "react-jsx": 3
   },
@@ -16,7 +17,6 @@
     }
   ],
   "suffix": ".bs.js",
-  "namespace": false,
   "bs-dependencies": [
     "reason-react",
     "@ahrefs/bs-emotion",
