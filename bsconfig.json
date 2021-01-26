@@ -1,6 +1,6 @@
 {
   "name": "taco-ui",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "namespace": false,
   "reason": {
     "react-jsx": 3
