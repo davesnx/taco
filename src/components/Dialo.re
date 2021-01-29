@@ -47,7 +47,8 @@ module Text = {
 let styles = Cn.make([
     [%css "text-align: center;"],
     Elevation.button,
-    BorderRadius.size(1)
+    BorderRadius.size(1),
+    Text.button,
   ]
 );
 
@@ -58,7 +59,7 @@ module Colors = {
 
 module PrimaryButton = {
   [@react.component]
-  let make = (~onClick, ~disabled, ~text as _) => {
+  let make = (~onClick, ~disabled, ~text) => {
     let className = Cn.make([
       styles,
       [%css "display: flex; justify-content: center; align-items: center;"],
@@ -69,6 +70,6 @@ module PrimaryButton = {
       /* Since Module.value isn't supported on the parser [%css "background: $Colors.primary"], we need to open it */
     ]);
 
-    <button ?onClick className />
+    <button ?onClick className> {React.string(text)} </button>
   }
 };

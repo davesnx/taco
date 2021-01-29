@@ -3,6 +3,7 @@ module Algins = {
   [@react.component]
   let make = () =>
     <Stack gap=8>
+      <Dialo.PrimaryButton text="Wat" onClick={Some(Js.log)} disabled=false />
       <Component
         title="Align"
         description="Align will center the children element on the X axis and Y axis. It's designed to only align one element.">
