@@ -17,7 +17,7 @@ module FontFamily = {
   let sans = Emotion.css([
     Emotion.unsafe("font-family", "'Open Sans', sans-serif")
   ]);
-}
+};
 
 module Text = {
   let size = (value) => {
@@ -43,7 +43,8 @@ module Text = {
     size(4),
     leading(6.)
   ])
-}
+};
+
 let styles = Cn.make([
     [%css "text-align: center;"],
     Elevation.button,
