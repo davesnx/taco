@@ -1,7 +1,10 @@
 module Border = {
   open Emotion;
 
+  [@genType]
   type radius = [ `Zero | `Rounded | `Full ];
+
+  [@genType]
   type t = [`Zero | `One | `Two ];
 
   let styles = (border) => {
@@ -30,6 +33,7 @@ module Border = {
 module Shadow = {
   open Emotion;
 
+  [@genType]
   type t = [`Zero | `Small | `Medium | `Large ];
 
   let styles = (shadow) => {
@@ -42,6 +46,7 @@ module Shadow = {
   };
 };
 
+[@genType "Box"]
 [@react.component]
 let make =
     (

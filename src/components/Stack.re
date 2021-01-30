@@ -1,8 +1,10 @@
+[@genType]
 type align =
   [ `Start
   | `End
   | `Center ];
 
+[@genType]
 type distribute =
   [ `Around
   | `Between
@@ -38,6 +40,7 @@ let gapStyles = (~unit, ~fit) => {
   };
 };
 
+[@genType "Stack"]
 [@react.component]
 let make =
     (

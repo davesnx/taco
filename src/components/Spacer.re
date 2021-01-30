@@ -18,6 +18,7 @@ let spaceStyles = (prop, unit) => {
   }
 };
 
+[@genType "Spacer"]
 [@react.component]
 let make =
     (

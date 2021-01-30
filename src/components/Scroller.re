@@ -12,6 +12,7 @@ module Content = [%styled.div {|
   flex-grow: 1;
 |}];
 
+[@genType "Scroller"]
 [@react.component]
 let make = (~children, ~top=?, ~bottom=?) => {
   <Scrollable>

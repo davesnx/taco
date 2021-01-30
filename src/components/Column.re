@@ -1,3 +1,4 @@
+[@genType "Column"]
 [@react.component]
 let make = (~width=`Fluid, ~children=?) => {
   let gap = React.useContext(Columns.gap);

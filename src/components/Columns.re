@@ -8,6 +8,7 @@ module ColumnsGapProvider = {
   let make = React.Context.provider(gap);
 };
 
+[@genType "Columns"]
 [@react.component]
 let make =
     (~children, ~fullHeight=true, ~gap=0) => {

@@ -1,3 +1,4 @@
+[@genType]
 type align = [ `Start | `Center | `End ];
 
 let inline = [%css {|
@@ -6,6 +7,7 @@ let inline = [%css {|
   /* outline: none; */
 |}];
 
+[@genType "Inline"]
 [@react.component]
 let make = (~align=`Center, ~children) => {
   let className = Cn.make([

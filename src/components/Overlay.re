@@ -12,6 +12,7 @@ module Overlay = [%styled.div {|
 |}];
 
 /* TODO: Add overflow: hidden on the body and other hacks for Safari iOS */
+[@genType "Overlay"]
 [@react.component]
 let make = (~isOpen=false, ~children=?) => {
 

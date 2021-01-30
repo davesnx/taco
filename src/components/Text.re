@@ -1,5 +1,7 @@
+[@genType]
 type size = [ | `XSmall | `Small | `Medium | `Large | `XLarge | `XXLarge | `XXXLarge];
 
+[@genType]
 type weight = [
   | `Thin
   | `Light
@@ -11,14 +13,17 @@ type weight = [
   | `Black
 ];
 
+[@genType]
 type leading = [ | `None | `Tight | `Snug | `Normal | `Relaxed | `Loose];
 
+[@genType]
 type align = [ | `Left | `Center | `Right | `Justify];
 
 /* type fontFamily = [ | `Sans | `Mono]; */
 
 /* let truncateStyles = [%css "display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"]; */
 
+[@genType "Text"]
 [@react.component]
 let make =
     (
