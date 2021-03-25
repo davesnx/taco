@@ -21,7 +21,7 @@ npm install --save taco-ui
 ## Usage with Reason
 
 When using ReScript you will need to add "taco-ui" and already have installed "reason-react" to your bs-dependencies in your bsconfig.json config
-```
+```diff
 {
   "bs-dependencies": [
     "reason-react",
