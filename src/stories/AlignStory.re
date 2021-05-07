@@ -44,7 +44,7 @@ module Algins = {
                   <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
-              <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
+              <Text align=`Center size=`XSmall> "x=`End y=`Start" </Text>
             </Stack>
             <Stack align=`Center distribute=`Center gap=2>
               <Box
@@ -57,7 +57,7 @@ module Algins = {
                   <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
-              <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
+              <Text align=`Center size=`XSmall> "x=`Start y=`Center" </Text>
             </Stack>
             <Stack align=`Center distribute=`Center gap=2>
               <Box
@@ -70,7 +70,7 @@ module Algins = {
                   <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
-              <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
+              <Text align=`Center size=`XSmall> "x=`Center y=`Center" </Text>
             </Stack>
             <Stack align=`Center distribute=`Center gap=2>
               <Box
@@ -83,7 +83,7 @@ module Algins = {
                   <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
-              <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
+              <Text align=`Center size=`XSmall> "x=`End y=`Center" </Text>
             </Stack>
             <Stack align=`Center distribute=`Center gap=2>
               <Box
@@ -96,7 +96,7 @@ module Algins = {
                   <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
-              <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
+              <Text align=`Center size=`XSmall> "x=`Start y=`End" </Text>
             </Stack>
             <Stack align=`Center distribute=`Center gap=2>
               <Box
@@ -109,7 +109,7 @@ module Algins = {
                   <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
-              <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
+              <Text align=`Center size=`XSmall> "x=`Center y=`End" </Text>
             </Stack>
             <Stack align=`Center distribute=`Center gap=2>
               <Box
@@ -122,7 +122,7 @@ module Algins = {
                   <Box background=Colors.Pink.dirty height=`Fixed(30) width=`Fixed(30) />
                 </Align>
               </Box>
-              <Text align=`Center size=`XSmall> "x=`Center y=`Start" </Text>
+              <Text align=`Center size=`XSmall> "x=`End y=`End" </Text>
             </Stack>
           </Grid>
           <Spacer bottom=10 />
