@@ -15,20 +15,20 @@ let make =
     ) => {
   let className =
     Cn.make([
-      [%css "display: flex; height: 100%; width: 100%;"],
+      [%cx "display: flex; height: 100%; width: 100%;"],
       switch (x) {
-      | `Start => [%css "justify-content: flex-start"]
-      | `Center => [%css "justify-content: center"]
-      | `End => [%css "justify-content: flex-end"]
+      | `Start => [%cx "justify-content: flex-start"]
+      | `Center => [%cx "justify-content: center"]
+      | `End => [%cx "justify-content: flex-end"]
       },
       switch (y) {
-      | `Start => [%css "align-items: flex-start"]
-      | `Center => [%css "align-items: center"]
-      | `End => [%css "align-items: flex-end"]
+      | `Start => [%cx "align-items: flex-start"]
+      | `Center => [%cx "align-items: center"]
+      | `End => [%cx "align-items: flex-end"]
       }
     ]);
 
-  <DataAttribute name="Align">
+  <Wrapper name="Align">
     <div className> children </div>
-  </DataAttribute>
+  </Wrapper>
 };

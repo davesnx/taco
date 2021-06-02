@@ -3,11 +3,11 @@
 let make = (~width=`Fluid, ~children=?) => {
   let gap = React.useContext(Columns.gap);
   let className = Cn.make([
-    [%css "height: 100%"],
+    [%cx "height: 100%"],
     switch (width) {
       | `Pct(f) => {
         let pct = f *. 100. |> Js.Float.toFixed |> Unit.pct;
-        [%css {|
+        [%cx {|
           min-width: 0;
           flex-grow: 0;
           flex-shrink: 1;
@@ -15,21 +15,21 @@ let make = (~width=`Fluid, ~children=?) => {
           Emotion.unsafe("flex-basis", "calc(" ++ pct ++ " - " ++ Unit.toPx(gap / 2) ++ ")")
         ]);
       }
-      | `Fluid => [%css "width: 100%; flex-grow: 1; flex-shrink: 0; flex-basis: 0%; "]
+      | `Fluid => [%cx "width: 100%; flex-grow: 1; flex-shrink: 0; flex-basis: 0%; "]
       | `Fixed(int) => {
         let width = string_of_int(int) ++ "px";
-        [%css "width: $width;"]
+        [%cx "width: $width;"]
       }
-      | `Auto => [%css "width: auto; flex-shrink: 0; min-width: 0;"]
+      | `Auto => [%cx "width: auto; flex-shrink: 0; min-width: 0;"]
     }
   ]);
 
-  <DataAttribute name="Column">
+  <Wrapper name="Column">
     <div className>
       {switch (children) {
       | None => React.null
       | Some(c) => c
       }}
     </div>
-  </DataAttribute>
+  </Wrapper>
 };

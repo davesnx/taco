@@ -16,9 +16,9 @@ let make =
   let margin = Unit.toPx(value);
   let className =
     Cn.make([
-      [%css "display: flex; flex-direction: row; width: 100%;"],
-      fullHeight ? [%css "height: 100%"] : [%css "height: auto"],
-      [%css {|
+      [%cx "display: flex; flex-direction: row; width: 100%;"],
+      fullHeight ? [%cx "height: 100%"] : [%cx "height: auto"],
+      [%cx {|
         & > * {
           margin-left: $margin;
         };
@@ -30,8 +30,8 @@ let make =
     ]);
 
   <ColumnsGapProvider value>
-    <DataAttribute name="Columns">
+    <Wrapper name="Columns">
       <div className> children </div>
-    </DataAttribute>
+    </Wrapper>
   </ColumnsGapProvider>;
 };

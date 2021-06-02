@@ -21,7 +21,7 @@ type align = [ | `Left | `Center | `Right | `Justify];
 
 /* type fontFamily = [ | `Sans | `Mono]; */
 
-/* let truncateStyles = [%css "display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"]; */
+/* let truncateStyles = [%cx "display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"]; */
 
 [@genType "Text"]
 [@react.component]
@@ -34,49 +34,50 @@ let make =
       ~align=`Left,
       ~children,
     ) => {
-  let className =
-    Cn.make([
+
+    let className = CssJs.style(. [|
+      [%css "color: $color"]
+    |]);
       /*  TODO: Define it in Theme
-          [%css {| font-family: "Wonder Unit Sans", "sans-serif" |}], */
-      [%css "color: $color"],
+          [%cx {| font-family: "Wonder Unit Sans", "sans-serif" |}], */
+      /* ,
       switch (size) {
-        | `XSmall => [%css "font-size: 12px"]
-        | `Small => [%css "font-size: 14px"]
-        | `Medium => [%css "font-size: 16px"]
-        | `Large => [%css "font-size: 22px"]
-        | `XLarge => [%css "font-size: 36px"]
-        | `XXLarge => [%css "font-size: 48px"]
-        | `XXXLarge => [%css "font-size: 72px"]
+        | `XSmall => [%cx "font-size: 12px"]
+        | `Small => [%cx "font-size: 14px"]
+        | `Medium => [%cx "font-size: 16px"]
+        | `Large => [%cx "font-size: 22px"]
+        | `XLarge => [%cx "font-size: 36px"]
+        | `XXLarge => [%cx "font-size: 48px"]
+        | `XXXLarge => [%cx "font-size: 72px"]
       },
         switch (weight) {
-        | `Thin => [%css "font-weight: 100"]
-        | `Light => [%css "font-weight: 200"]
-        | `Regular => [%css "font-weight: 300"]
-        | `Medium => [%css "font-weight: 400"]
-        | `Semibold => [%css "font-weight: 500"]
-        | `Bold => [%css "font-weight: 600"]
-        | `Extrabold => [%css "font-weight: 700"]
-        | `Black => [%css "font-weight: 800"]
+        | `Thin => [%cx "font-weight: 100"]
+        | `Light => [%cx "font-weight: 200"]
+        | `Regular => [%cx "font-weight: 300"]
+        | `Medium => [%cx "font-weight: 400"]
+        | `Semibold => [%cx "font-weight: 500"]
+        | `Bold => [%cx "font-weight: 600"]
+        | `Extrabold => [%cx "font-weight: 700"]
+        | `Black => [%cx "font-weight: 800"]
       },
       switch (align) {
-        | `Left => [%css "text-align: left; "]
-        | `Right => [%css "text-align: right;"]
-        | `Justify => [%css "text-align: justify;"]
-        | `Center => [%css "text-align: center;"]
-      },
+        | `Left => [%cx "text-align: left; "]
+        | `Right => [%cx "text-align: right;"]
+        | `Justify => [%cx "text-align: justify;"]
+        | `Center => [%cx "text-align: center;"]
+      }, */
       /* switch (leading) {
-        | `None => [%css "line-height: 1"]
-        | `Tight => [%css "line-height: 1.25"]
-        | `Snug => [%css "line-height: 1.375"]
-        | `Normal => [%css "line-height: 1.5"]
-        | `Relaxed => [%css "line-height: 1.625"]
-        | `Loose => [%css "line-height: 2.0"]
+        | `None => [%cx "line-height: 1"]
+        | `Tight => [%cx "line-height: 1.25"]
+        | `Snug => [%cx "line-height: 1.375"]
+        | `Normal => [%cx "line-height: 1.5"]
+        | `Relaxed => [%cx "line-height: 1.625"]
+        | `Loose => [%cx "line-height: 2.0"]
       }, */
       /*  TODO: Support uppercase on styled-ppx
-          uppercase ? [%css "text-transform: uppercase; "] : "", */
+          uppercase ? [%cx "text-transform: uppercase; "] : "", */
       /*  TODO: Support ellipsis on styled-ppx
           truncate ? truncateStyles : "", */
-    ]);
 
   /* TODO: Add "as" prop and render different kind of texts */
   <span className> {React.string(children)} </span>;

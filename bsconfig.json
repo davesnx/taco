@@ -24,7 +24,8 @@
   "suffix": ".bs.js",
   "bs-dependencies": [
     "reason-react",
-    "@ahrefs/bs-emotion",
+    "bs-css-emotion",
+    "bs-css",
     "re-classnames",
     "bs-webapi"
   ],
@@ -34,9 +35,8 @@
     "bs-react-testing-library"
   ],
   "ppx-flags": [
-    "@davesnx/styled-ppx/styled-ppx"
+    "@davesnx/styled-ppx/ppx"
   ],
-  "refmt": 3,
   "warnings": {
     "error": "+5"
   },

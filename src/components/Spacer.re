@@ -1,21 +1,5 @@
 let spaceDirectionStyles = (prop, direction, unit) => {
-  if (unit != 0) {
-    Emotion.css([
-      Emotion.unsafe(prop ++ "-" ++ direction, Theme.unitize(unit))
-    ])
-  } else {
-    Emotion.css([]);
-  }
-};
-
-let spaceStyles = (prop, unit) => {
-  if (unit != 0) {
-    Emotion.css([
-      Emotion.unsafe(prop, Theme.unitize(unit))
-    ])
-  } else {
-    Emotion.css([]);
-  }
+  CssJs.unsafe(prop ++ "-" ++ direction, Theme.unitize(unit))
 };
 
 [@genType "Spacer"]
@@ -36,15 +20,15 @@ let make =
       spaceDirectionStyles(inner ? "margin" : "padding", "bottom", bottom),
       spaceDirectionStyles(inner ? "margin" : "padding", "left", left),
       spaceDirectionStyles(inner ? "margin" : "padding", "right", right),
-      spaceStyles(inner ? "margin" : "padding", all),
+      CssJs.unsafe(inner ? "margin" : "padding", Theme.unitize(all))
     ]);
 
-  <DataAttribute name="Spacer">
+  <Wrapper name="Spacer">
     <div className>
       {switch (children) {
       | None => React.null
       | Some(c) => c
       }}
     </div>
-  </DataAttribute>
+  </Wrapper>
 };

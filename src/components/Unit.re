@@ -4,6 +4,7 @@ let pct = v => v ++ "%";
 let toPx = v => px(string_of_int(v));
 let toRem = v => rem(string_of_int(v));
 
+/*
 module Size = {
   type t = [ `Pct(float) | `Full | `Fluid | `Auto | `Fixed(int) ];
 
@@ -14,13 +15,19 @@ module Size = {
           let width = f *. 100. |> Js.Float.toFixed |> pct;
           [%css "width: $width"];
         }
-        | `Full => [%css "width: 100%;"]
-        | `Fluid => [%css "width: 100%;"]
+        | `Fluid
+        | `Full => {
+          let width = "100%";
+          [%css "width: $width;"];
+        }
         | `Fixed(int) => {
           let width = string_of_int(int) ++ "px";
           [%css "width: $width;"]
         }
-        | `Auto => [%css "width: auto;"]
+        | `Auto => {
+          let weight = "auto";
+          [%css "width: $weight"];
+        }
       }
     };
   };
@@ -32,14 +39,21 @@ module Size = {
           let height = f *. 100. |> Js.Float.toFixed |> pct;
           [%css "height: $height"];
         }
-        | `Full => [%css "height: 100%;"]
-        | `Fluid => [%css "height: 100%;"]
+        | `Fluid
+        | `Full => {
+          let height = "100%";
+          [%css "height: $height;"];
+        }
         | `Fixed(int) => {
           let height = int |> string_of_int |> px;
-          [%css "height: $height;"]
+          [%css "height: $height;"];
         }
-        | `Auto => [%css "height: auto;"]
+        | `Auto => {
+          let height = "auto";
+          [%css "height: $height"];
+        }
       }
     };
   };
 };
+ */
